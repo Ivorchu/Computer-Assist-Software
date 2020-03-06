@@ -1,4 +1,6 @@
 import pygame
+import runautohotkey, webcrawler.py, magnifier, stock, lottery, reminder, youtube, news, texting, autoscheduleplanner
+
 pygame.init()
 
 window = pygame.display.set_mode((500, 500))
