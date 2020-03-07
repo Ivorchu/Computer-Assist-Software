@@ -15,3 +15,8 @@ sleep, 2000
 send, 天氣 {enter}{enter}
 return
 
+;Press G to go to GitHub
+g::
+run, https://github.com/
+return
+
