@@ -1,7 +1,7 @@
 ##### Data Starts #####
 
-gmail = 
-password = 
+Gmail = 
+Password = 
 Address = 
 Phone Number = 
 Credit Card Number = 
@@ -13,7 +13,7 @@ ID Number =
 !g::
 run, https://reurl.cc/X6XLOa
 sleep, 2000
-send, %gmail% {enter}
+send, %Gmail% {enter}
 sleep, 2000
-send, %password% {enter}
+send, %Password% {enter}
 return
