@@ -21,7 +21,7 @@ def redrawAppWindow():
 	win.fill((255, 255, 255))
 	pygame.display.update()
 
-start = classes.button()
+start = button()
 
 #mainloop
 run = True
