@@ -1,9 +1,13 @@
 import twstock 
+class stock: 
+	def __init__(self, num):
+		x = twstock.realtime.get(num).pop("realtime") 
+		self.buy = x["best_ask_price"][0]
+		self.bid = x["best_bid_price"][0]
+		self.high = x["high"]
+		self.low = x["low"] 
 
-def stock():
-	num = input("請輸入股票代碼 ") 
-	stock = twstock.realtime.get(num).pop("realtime") 
-	print("最高買價", stock["best_bid_price"][0]) 
-	print("最低賣價", stock["best_ask_price"][0]) 
-	print("最高", stock["high"])
-	print("最低", stock["low"]) 
+
+
+
+
