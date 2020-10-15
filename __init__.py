@@ -1,5 +1,5 @@
-import pygame
-from classes import button
+import tkinter as tk
+from tkinter import ttk
 #from runautohotkey import 
 #from webcrawler import 
 #from magnifier import 
@@ -11,29 +11,36 @@ from classes import button
 #from texting import 
 #from autoscheduleplanner import
 
-pygame.init()
+#Initialize Window
+window = tk.Tk()
+window.geometry("550x367")
+window.resizable(0, 0)
+window.title('Computer Assist Software')
 
-win = pygame.display.set_mode((500, 500))
+#Frames
+frame_opt = tk.Frame(window, height=450, width=200, bg='#3E4149')
+frame_opt.pack(side='left')
 
-pygame.display.set_caption("Computer Assist Software")
+#Buttons
+btn_home = tk.Button(frame_opt, text='Home', width=8, height=2, bd=0, highlightbackground='#3E4149')
+btn_passw = tk.Button(frame_opt, text='Password', width=8, height=2, bd=0, highlightbackground='#3E4149')
+btn_mag = tk.Button(frame_opt, text='Magnifier', width=8, height=2, bd=0, highlightbackground='#3E4149')
+btn_stocks = tk.Button(frame_opt, text='Stocks', width=8, height=2, bd=0, highlightbackground='#3E4149')
+btn_lottery = tk.Button(frame_opt, text='Lottery', width=8, height=2, bd=0, highlightbackground='#3E4149')
+btn_cal = tk.Button(frame_opt, text='Calender', width=8, height=2, bd=0, highlightbackground='#3E4149')
+btn_music = tk.Button(frame_opt, text='Music', width=8, height=2, bd=0, highlightbackground='#3E4149')
+btn_news = tk.Button(frame_opt, text='News', width=8, height=2, bd=0, highlightbackground='#3E4149')
 
-def redrawAppWindow():
-	win.fill((255, 255, 255))
-	pygame.display.update()
+#Packs
+btn_home.grid(row=0, padx = 1, pady = 1)
+btn_passw.grid(row=1, padx = 1, pady = 1)
+btn_mag.grid(row=2, padx = 1, pady = 1)
+btn_stocks.grid(row=3, padx = 1, pady = 1)
+btn_lottery.grid(row=4, padx = 1, pady = 1)
+btn_cal.grid(row=5, padx = 1, pady = 1)
+btn_music.grid(row=6, padx = 1, pady = 1)
+btn_news.grid(row=7, padx = 1, pady = 1)
 
-start = button()
 
 #mainloop
-run = True
-while run:
-	pygame.time.delay(100)
-
-	for event in pygame.event.get():
-		if event.type == pygame.QUIT:
-			run = False
-
-	keys = pygame.key.get_pressed()
-
-	redrawAppWindow()
-
-pygame.quit()
+tk.mainloop()

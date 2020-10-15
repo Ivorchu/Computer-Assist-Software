@@ -1,14 +1,14 @@
-import pygame
+import tkinter as tkinter
 
-win = pygame.display.set_mode((500, 500))
+'''
+class Application(tk.frame):
+	def __init__(self, master = None):
+		super().__init__(master)
+		self.master = master
+		self.pack()
+		self.create_widgets()
 
-class button(object, x, y):
-    def __init__(self):
-    	self.x = x
-    	self.y = y
-    	self.width = 64
-    	self.height = 64
-    	self.clicked = False
-    	pygame.draw.rect(win, (255,0,0), (self.x, self.y, self.width, self.height))
-
-    
+	def create_widgets(self):
+		self.btn_home = tk.Button(self)
+		self.btn_home["text"] = "主頁面"
+'''
