@@ -4,7 +4,7 @@ from tkinter import ttk
 #from runautohotkey import 
 #from webcrawler import 
 #from magnifier import 
-#from stock import 
+#from stock import stock
 #from lottery import 
 #from reminder import 
 #from youtube import 
@@ -48,7 +48,6 @@ btn_lottery.grid(row=4, padx = (5, 7), pady = 3)
 btn_cal.grid(row=5, padx = (5, 7), pady = 3)
 btn_music.grid(row=6, padx = (5, 7), pady = 3)
 btn_news.grid(row=7, padx = (5, 7), pady = (3, 20))
-
 
 #mainloop
 tk.mainloop()
