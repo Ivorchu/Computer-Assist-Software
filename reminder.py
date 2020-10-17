@@ -1,15 +1,15 @@
-import calendar
 from datetime import datetime
 import time
 import csv
+import calendar
 
-def addReminder(name, description='', year=datetime.now().year, month=datetime.now().month, date=datetime.now().date, hour=0, mint=0, minRemind=0, activate=True):
+def addReminder(name, description='', year=datetime.now().year, month=datetime.now().month, date=datetime.now().date, hour=0, mint=0, minRemind=0):
 	with open('reminder.csv', 'w+') as reminderList:
-		fieldNames = ['name', 'description', 'year', 'month', 'date', 'hour', 'mint', 'minRemind', 'activate']
+		fieldNames = ['name', 'description', 'year', 'month', 'date', 'hour', 'mint', 'minRemind']
 		writer = csv.DictWriter(reminderList, fieldnames=fieldNames)
 
 		writer.writeheader()
-		writer.writerow({'name':name, 'description':description, 'year':year, 'month':month, 'date':date, 'hour':hour, 'mint':mint, 'minRemind':minRemind, 'activate':activate})
+		writer.writerow({'name':name, 'description':description, 'year':year, 'month':month, 'date':date, 'hour':hour, 'mint':mint, 'minRemind':minRemind})
 
 def deleteReminder(name):
 	temp = list()
@@ -99,12 +99,29 @@ def activateReminder(name):
 				return
 		return 'Reminder Not Found!'
 
-def deactivateReminder(name):
-	with open('reminder.csv', 'r') as reminderList:
-		reader = csv.DictReader(reminderList)
+def currentTime():
+	return time.localtime(time.clock())
 
-		for row in reminderList:
-			if name==row['name']:
-				row['activate'] = False
-				return
-		return 'Reminder Not Found!'
+def getCalendar(year=datetime.now().year, month=datetime.now().month):
+	return calendar.month(year, month)
+
+def alert():
+	pass
+
+def activateTime():
+	refreshTime = 300
+	temp = list()
+	while True:
+		with open('reminder.csv', 'r') as reminderList:
+			reader = csv.DictReader(reminderList)
+
+			for row in reader:
+				temp.append(row)
+		while count:
+			for row in temp:
+				if datetime.now().minute - row['minRemind'] == row['mint']:
+					alert()
+			count-=1
+			time.sleep(1)
+
+
