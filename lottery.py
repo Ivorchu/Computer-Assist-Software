@@ -6,6 +6,7 @@ r = requests.get("http://www.taiwanlottery.com.tw/")
 html_str = r.text
 soup = BeautifulSoup(html_str, "html.parser")
 
+#10 kinds of lottery
 
 def bingobingo():
     target = soup.find_all('div', class_='ball_box01')
@@ -142,13 +143,33 @@ def fourstarlottery():
     print()
 
 
-bingobingo()
-win_win()
-powercolor()
-lottery38()
-biglottery()
-lottery49()
-todaylottery539()
-lottery39()
-threestarlottery()
-fourstarlottery()
+def ask():
+    bingobingo_dict = {1: "賓果賓果", 2: bingobingo(), 3:"賓果", 4: "bingo"}
+    win_win_dict    = {1: "雙贏彩", 2: win_win()}
+    powercolor_dict = {1: "威力彩", 2: powercolor()}
+    lottery38_dict  = {1: "38樂台彩", 2: lottery38()}
+    biglottery_dict = {1: "大樂透", 2: biglottery()}
+    lottery49_dict  = {1: "49樂台彩", 2: lottery49()}
+    todaylottery539_dict  = {1: "今彩539", 2: todaylottery539()}
+    lottery39_dict  = {1: "39樂台彩", 2: lottery39()}
+    threestarlottery_dict = {1: "三星彩", 2: threestarlottery()}
+    fourstarlottery_dict  = {1: "四星彩", 2: fourstarlottery()}
+    all_lottery = {
+    1: bingobingo_dict,
+    2: win_win_dict,
+    3: powercolor_dict,
+    4: lottery38_dict,
+    5: biglottery_dict,
+    6: lottery49_dict,
+    7: todaylottery539_dict,
+    8: lottery39_dict,
+    9: threestarlottery_dict,
+    10: fourstarlottery_dict,
+    }
+
+    statement = input("請問要搜尋哪種彩卷?")
+    for i in all_lottery:
+        if statement == all_lottery[i]:
+            all_lottery[2] 
+
+ask()
