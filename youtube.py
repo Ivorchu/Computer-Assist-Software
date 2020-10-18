@@ -11,7 +11,7 @@ def youtube(window, font):
         options.add_argument("disable-infobars") 
         options.add_argument("--disable-extensions")  
         options.add_experimental_option("detach", True)  
-        driver = webdriver.Chrome("C:\chromedriver_win32 (1)\chromedriver.exe", options=options) 
+        driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe", options=options) 
         driver.get(url)  
  
         #Retreive link 
