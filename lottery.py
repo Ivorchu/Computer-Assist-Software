@@ -1,8 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 
-# from selenium import webdriver
-
 
 r = requests.get("http://www.taiwanlottery.com.tw/")
 html_str = r.text
@@ -36,7 +34,7 @@ def bingobingo():
     print("猜單雙: " + list[:2])
     print()
 
-def 雙贏彩():
+def win_win():
     target = soup.find_all('div', class_='ball_tx ball_blue')
     print("雙贏彩")
     list = ""
@@ -47,7 +45,7 @@ def 雙贏彩():
     print()
 
 
-def 威力彩():
+def powercolor():
     target = soup.find_all('div', class_='ball_tx ball_green')
     print("威力彩")
     list = ""
@@ -63,7 +61,7 @@ def 威力彩():
     print()
 
 
-def 樂台彩38():
+def lottery38():
     target = soup.find_all('div', class_='ball_tx ball_green')
     print("38樂台彩")
     list = ""
@@ -74,7 +72,7 @@ def 樂台彩38():
     print()
 
 
-def 大樂透():
+def biglottery():
     target = soup.find_all('div', class_='ball_tx ball_yellow')
     print("大樂透")
     list = ""
@@ -91,7 +89,7 @@ def 大樂透():
     print()
 
 
-def 樂台彩49():
+def lottery49():
     target = soup.find_all('div', class_='ball_tx ball_yellow')
     print("49樂台彩")
     list = ""
@@ -102,7 +100,7 @@ def 樂台彩49():
     print()
 
 
-def 今彩539():
+def todaylottery539():
     target = soup.find_all('div', class_='ball_tx ball_lemon')
     print("今彩539")
     list = ""
@@ -113,7 +111,7 @@ def 今彩539():
     print()
 
 
-def 樂台彩39():
+def lottery39():
     target = soup.find_all('div', class_='ball_tx ball_lemon')
     print("39樂台彩")
     list = ""
@@ -124,7 +122,7 @@ def 樂台彩39():
     print()
 
 
-def 三星彩():
+def threestarlottery():
     target = soup.find_all('div', class_='ball_tx ball_purple')
     print("三星彩")
     list = ""
@@ -134,7 +132,7 @@ def 三星彩():
     print()
 
 
-def 四星彩():
+def fourstarlottery():
     target = soup.find_all('div', class_='ball_tx ball_purple')
     print("四星彩")
     list = ""
@@ -145,33 +143,12 @@ def 四星彩():
 
 
 bingobingo()
-雙贏彩()
-威力彩()
-樂台彩38()
-大樂透()
-樂台彩49()
-今彩539()
-樂台彩39()
-三星彩()
-四星彩()
-
-'''
-mid = len(lst) // 2
-st = lst[:mid]
-nd = lst[mid:]
-'''
-
-'''
-url = "http://www.facebook.com/"
-email = input("Email plz ")
-password = input("Password plz ")
-
-Chrome_driver_path = "D:\chromedriver_win32\chromedriver.exe"
-driver = webdriver.Chrome(executable_path=Chrome_driver_path)
-driver.maximize_window()
-driver.get(url)
-
-driver.find_element_by_id("email").send_keys(email)
-driver.find_element_by_id("pass").send_keys(password)
-driver.find_element_by_id("loginbutton").click()
-'''
+win_win()
+powercolor()
+lottery38()
+biglottery()
+lottery49()
+todaylottery539()
+lottery39()
+threestarlottery()
+fourstarlottery()
