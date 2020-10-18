@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09f3ff62-9b07-4463-8d68-f5c204c39028" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Computer-Assist-Software.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news.py" beforeDir="false" afterPath="$PROJECT_DIR$/news.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,12 +245,12 @@
     <list>
       <item itemvalue="Python.autoscheduleplanner" />
       <item itemvalue="Python.lottery" />
-      <item itemvalue="Python.ui_demo" />
       <item itemvalue="Python.magnifier" />
       <item itemvalue="Python.news" />
       <item itemvalue="Python.reminder" />
       <item itemvalue="Python.runautohotkey" />
       <item itemvalue="Python.stock" />
+      <item itemvalue="Python.ui_demo" />
       <item itemvalue="Python.webcrawler" />
       <item itemvalue="Python.youtube" />
     </list>
@@ -281,26 +277,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1602948630561" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1602743198728">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1602948848772">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602743198728" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1602743198728">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602948848772" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1602948848772">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602743198728" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1602743198727">
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602948848772" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1602948848772">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602743198727" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1602743198728">
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602948848772" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1602948848772">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602743198728" />
-    <state x="457" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1602948539395">
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602948848772" />
+    <state x="457" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1602989411170">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="457" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1602948539395" />
+    <state x="457" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1602989411170" />
     <state x="418" y="55" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602651085570">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
