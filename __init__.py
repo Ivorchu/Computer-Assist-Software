@@ -7,7 +7,7 @@ from youtube import youtube
 #from webcrawler import 
 #from magnifier import 
 #from stock import stock
-from lottery import ask
+#from lottery import ask
 #from reminder import 
 #from news import 
 #from texting import 
@@ -37,7 +37,8 @@ btn_mag = tk.Button(frame_opt, text='Magnifier', width=8, height=2, bd=0, bg = "
 btn_mag["font"] = font 
 btn_stocks = tk.Button(frame_opt, text='Stocks', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
 btn_stocks["font"] = font 
-btn_lottery = tk.Button(frame_opt, text='Lottery', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w", command = lambda: ask())
+btn_lottery = tk.Button(frame_opt, text='Lottery', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
+#btn_lottery = tk.Button(frame_opt, text='Lottery', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w", command = lambda: ask())
 btn_lottery["font"] = font 
 btn_cal = tk.Button(frame_opt, text='Calender', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
 btn_cal["font"] = font 
