@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import * 
 from tkinter import font as tkFont
 from tkinter import ttk
-from Youtube import youtube 
+from youtube import youtube 
 #from runautohotkey import 
 #from webcrawler import 
 #from magnifier import 
