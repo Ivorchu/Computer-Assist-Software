@@ -15,9 +15,7 @@ def youtube(window, font):
         driver.get(url) 
 
         #Retreive link
-        vid = driver.find_element_by_xpath("//*[@id='dismissable']/ytd-thumbnail").get_attribute("innerHTML")
-        vid = driver.find_elements_by_css_selector("a") 
-        url = vid[13].get_attribute("href")
+        url = driver.find_element_by_xpath("//*[@id='dismissable']/ytd-thumbnail/a").get_attribute("href")
         driver.get(url)
     #Main 
     entry1 = tk.Entry(window)
