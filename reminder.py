@@ -89,24 +89,19 @@ def currentTime():
 def getCalendar(year=datetime.now().year, month=datetime.now().month):
 	return calendar.month(year, month)
 
-'''
-def alert():
-	pass
+def alert(name):
+	update()
+	global temp
+	for row in temp:
+		if name==row['name']:
+			for i in row:
+				print(i)
 
 def activateTime():
-	refreshTime = 300
-	temp = list()
+	update()
+	global temp
 	while True:
-		with open('reminder.csv', 'r') as reminderList:
-			reader = csv.DictReader(reminderList)
-
-			for row in reader:
-				temp.append(row)
-		while count:
-			for row in temp:
-				if datetime.now().minute - row['minRemind'] == row['mint']:
-					alert()
-			count-=1
-			time.sleep(1)
-'''
+		for row in temp:
+			if datetime.now().date() == (row['year'], row['month'], row['date']):
+				alert()
 
