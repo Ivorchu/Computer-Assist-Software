@@ -3,102 +3,85 @@ import time
 import csv
 import calendar
 
-def addReminder(name, description='', year=datetime.now().year, month=datetime.now().month, date=datetime.now().date, hour=0, mint=0, minRemind=0):
-	with open('reminder.csv', 'w+') as reminderList:
-		fieldNames = ['name', 'description', 'year', 'month', 'date', 'hour', 'mint', 'minRemind']
-		writer = csv.DictWriter(reminderList, fieldnames=fieldNames)
+temp = list()
 
-		writer.writeheader()
-		writer.writerow({'name':name, 'description':description, 'year':year, 'month':month, 'date':date, 'hour':hour, 'mint':mint, 'minRemind':minRemind})
-
-def deleteReminder(name):
-	temp = list()
+def update():
 	with open('reminder.csv', 'r') as reminderList:
 		reader = csv.DictReader(reminderList)
 
+		global temp
 		for row in reader:
 			temp.append(row)
-			for field in row:
-				if field==name:
-					temp.remove(row)
 
+def overWrite():
 	with open('reminder.csv', 'w') as reminderList:
-		writer = csv.DictWriter(reminderList)
+		global temp
+		fieldNames = ['name', 'description', 'date', 'hour', 'mint', 'minRemind']
+		reader = csv.DictReader(reminderList, fieldnames=fieldNames)
+		writer = csv.DictWriter(reminderList, fieldnames=fieldNames)
 		writer.writeheader()
 		writer.writerows(temp)
 
-def getReminderScript(name):
-	with open('reminder.csv', 'r') as reminderList:
-		reader = csv.DictReader(reminderList)
+def addReminder(name, description='', date=datetime.now().date(), hour=0, mint=0, minRemind=0):
+	global temp
+	temp.append({'name':name, 'description':description, 'date':date, 'hour':hour, 'mint':mint, 'minRemind':minRemind})
+	overWrite()
 
-		for row in reminderList:
-			if name==row['name']:
-				return row['description']
-		return 'Reminder Not Found!'
+def getReminderScript(name):
+	update()
+	global temp
+	for row in temp:
+		if name==row['name']:
+			return row['description']
+	return 'Reminder Not Found!'
 
 def getReminderYear(name):
-	with open('reminder.csv', 'r') as reminderList:
-		reader = csv.DictReader(reminderList)
-
-		for row in reminderList:
-			if name==row['name']:
-				return row['year']
-		return 'Reminder Not Found!'
+	update()
+	global temp
+	for row in temp:
+		if name==row['name']:
+			return row['description']
+	return 'Reminder Not Found!'
 
 def getReminderMonth(name):
-	with open('reminder.csv', 'r') as reminderList:
-		reader = csv.DictReader(reminderList)
-
-		for row in reminderList:
-			if name==row['name']:
-				return row['month']
-		return 'Reminder Not Found!'
+	update()
+	global temp
+	for row in temp:
+		if name==row['name']:
+			return row['description']
+	return 'Reminder Not Found!'
 
 def getReminderDate(name):
-	with open('reminder.csv', 'r') as reminderList:
-		reader = csv.DictReader(reminderList)
-
-		for row in reminderList:
-			if name==row['name']:
-				return row['date']
-		return 'Reminder Not Found!'
+	update()
+	global temp
+	for row in temp:
+		if name==row['name']:
+			return row['description']
+	return 'Reminder Not Found!'
 
 def getReminderHour(name):
-	with open('reminder.csv', 'r') as reminderList:
-		reader = csv.DictReader(reminderList)
-
-		for row in reminderList:
-			if name==row['name']:
-				return row['hour']
-		return 'Reminder Not Found!'
+	update()
+	global temp
+	for row in temp:
+		if name==row['name']:
+			return row['description']
+	return 'Reminder Not Found!'
 
 def getReminderMint(name):
-	with open('reminder.csv', 'r') as reminderList:
-		reader = csv.DictReader(reminderList)
-
-		for row in reminderList:
-			if name==row['name']:
-				return row['mint']
-		return 'Reminder Not Found!'
+	update()
+	global temp
+	for row in temp:
+		if name==row['name']:
+			return row['description']
+	return 'Reminder Not Found!'
 
 def getReminderMinRemind(name):
-	with open('reminder.csv', 'r') as reminderList:
-		reader = csv.DictReader(reminderList)
-
-		for row in reminderList:
-			if name==row['name']:
-				return row['minRemind']
-		return 'Reminder Not Found!'
-
-def activateReminder(name):
-	with open('reminder.csv', 'r') as reminderList:
-		reader = csv.DictReader(reminderList)
-
-		for row in reminderList:
-			if name==row['name']:
-				row['activate'] = True
-				return
-		return 'Reminder Not Found!'
+	update()
+	global temp
+	for row in temp:
+		if name==row['name']:
+			return row['description']
+	return 'Reminder Not Found!'
 
 def currentTime():
 	return time.localtime(time.clock())
@@ -106,6 +89,7 @@ def currentTime():
 def getCalendar(year=datetime.now().year, month=datetime.now().month):
 	return calendar.month(year, month)
 
+'''
 def alert():
 	pass
 
@@ -124,5 +108,5 @@ def activateTime():
 					alert()
 			count-=1
 			time.sleep(1)
-
+'''
 
