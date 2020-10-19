@@ -1,6 +1,5 @@
-from bs4 import BeautifulSoup 
-from selenium import webdriver
-import tkinter as tk
+from selenium import webdriver 
+import tkinter as tk 
 import selenium 
 def youtube(window, font):
     def watch():
@@ -11,14 +10,12 @@ def youtube(window, font):
         options.add_argument("disable-infobars")
         options.add_argument("--disable-extensions") 
         options.add_experimental_option("detach", True) 
-        driver = webdriver.Chrome("C:\chromedriver_win32(1)\chromedriver.exe", options=options)
+        driver = webdriver.Chrome("C:\chromedriver_win32 (1)\chromedriver.exe", options=options)
         driver.get(url) 
 
         #Retreive link
-        vid = driver.find_element_by_xpath("//*[@id='dismissable']/ytd-thumbnail").get_attribute("innerHTML")
-        vid = driver.find_elements_by_css_selector("a") 
-        url = vid[13].get_attribute("href")
-        driver.get(url)
+        vid = driver.find_element_by_xpath("//*[@id='dismissable']/ytd-thumbnail/a").get_attribute("href")
+        driver.get(vid) 
     #Main 
     entry1 = tk.Entry(window)
     entry1.grid(row = 1, column = 1, pady = (150, 10), padx = 160) 
