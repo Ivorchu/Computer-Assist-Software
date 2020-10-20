@@ -17,8 +17,8 @@ window.title('Computer Assist Software')
 font = tkFont.Font(family = "Arial", size = 9) 
 
 #Frames
-frame_opt = tk.Frame(window, height=500, width=200, bg='#33383E')
-frame_opt.pack(side='left')
+frame_opt = tk.Frame(window, height= 500, width=200, bg='#33383E')
+frame_opt.pack(side='left', fill = "both" )
 
 #Content
 canvas = tk.Frame(window, height = 500, width = 500, bg = "#FFFFFF")
