@@ -26,6 +26,13 @@ frame_opt.pack(side='left')
 canvas = tk.Frame(window, height = 400, width = 500, bg = "#FFFFFF")
 canvas.pack()
 
+# clear frame (canvas)
+def clear_frame():
+	#canvas.destroy()
+	#canvas.pack_forget()
+	#canvas.grid_forget()
+	return 0
+
 #Buttons
 btn_home = tk.Button(frame_opt, text='Home', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
 btn_home["font"] = font 
@@ -36,7 +43,7 @@ btn_mag["font"] = font
 btn_stocks = tk.Button(frame_opt, text='Stocks', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w", command = lambda: stocks(canvas, font))
 btn_stocks["font"] = font 
 btn_lottery = tk.Button(frame_opt, text='Lottery', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
-#btn_lottery = tk.Button(frame_opt, text='Lottery', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w", command = lambda: ask())
+#btn_lottery = tk.Button(frame_opt, text='Lottery', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w", command = ask())
 btn_lottery["font"] = font 
 btn_cal = tk.Button(frame_opt, text='Calender', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
 btn_cal["font"] = font 
