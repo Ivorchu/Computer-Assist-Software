@@ -5,7 +5,7 @@ from tkinter import ttk
 from youtube import youtube
 from stock import stocks
 #from magnifier import activateMagnifier
-#from lottery import ask
+from lottery import main
 from reminder import *
 #from news import 
 
@@ -18,7 +18,7 @@ font = tkFont.Font(family = "Arial", size = 9)
 
 #Frames
 frame_opt = tk.Frame(window, height= 500, width=200, bg='#33383E')
-frame_opt.pack(side='left', fill = "both" )
+frame_opt.pack(side='left', fill = "both" ,expand="yes")
 
 #Content
 canvas = tk.Frame(window, height = 500, width = 500, bg = "#FFFFFF")
@@ -40,8 +40,7 @@ btn_mag = tk.Button(frame_opt, text='Magnifier', width=15, height=2, bd=0, bg = 
 btn_mag["font"] = font 
 btn_stocks = tk.Button(frame_opt, text='Stocks', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: stocks(canvas, font))
 btn_stocks["font"] = font 
-btn_lottery = tk.Button(frame_opt, text='Lottery', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
-#btn_lottery = tk.Button(frame_opt, text='Lottery', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "w", command = ask())
+btn_lottery = tk.Button(frame_opt, text='Lottery', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: main(canvas, font))
 btn_lottery["font"] = font 
 btn_cal = tk.Button(frame_opt, text='Calender', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
 btn_cal["font"] = font 
