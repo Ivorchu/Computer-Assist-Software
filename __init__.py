@@ -2,11 +2,9 @@ import tkinter as tk
 from tkinter import * 
 from tkinter import font as tkFont
 from tkinter import ttk
-from youtube import youtube 
-#from runautohotkey import 
-#from webcrawler import 
+from youtube import youtube
+from stock import stocks
 #from magnifier import 
-#from stock import stock
 #from lottery import ask
 #from reminder import 
 #from news import 
@@ -35,7 +33,7 @@ btn_passw = tk.Button(frame_opt, text='Password', width=8, height=2, bd=0, bg = 
 btn_passw["font"] = font 
 btn_mag = tk.Button(frame_opt, text='Magnifier', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
 btn_mag["font"] = font 
-btn_stocks = tk.Button(frame_opt, text='Stocks', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
+btn_stocks = tk.Button(frame_opt, text='Stocks', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w", command = lambda: stocks(canvas, font))
 btn_stocks["font"] = font 
 btn_lottery = tk.Button(frame_opt, text='Lottery', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
 #btn_lottery = tk.Button(frame_opt, text='Lottery', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w", command = lambda: ask())
