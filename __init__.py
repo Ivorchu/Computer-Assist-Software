@@ -4,24 +4,24 @@ from tkinter import font as tkFont
 from tkinter import ttk
 from youtube import youtube
 from stock import stocks
-from magnifier import activateMagnifier
+#from magnifier import activateMagnifier
 #from lottery import ask
 from reminder import *
 #from news import 
 
 #Initialize Window
 window = tk.Tk()
-window.geometry("550x367")
+window.geometry("600x400")
 window.resizable(0, 0)
 window.title('Computer Assist Software') 
 font = tkFont.Font(family = "Arial", size = 9) 
 
 #Frames
-frame_opt = tk.Frame(window, height=450, width=200, bg='#34495E')
+frame_opt = tk.Frame(window, height=500, width=200, bg='#33383E')
 frame_opt.pack(side='left')
 
 #Content
-canvas = tk.Frame(window, height = 400, width = 500, bg = "#FFFFFF")
+canvas = tk.Frame(window, height = 500, width = 500, bg = "#FFFFFF")
 canvas.pack()
 
 # clear frame (canvas)
@@ -32,22 +32,22 @@ def clear_frame():
 	return 0
 
 #Buttons
-btn_home = tk.Button(frame_opt, text='Home', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
+btn_home = tk.Button(frame_opt, text='Home', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
 btn_home["font"] = font 
-btn_passw = tk.Button(frame_opt, text='Password', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
+btn_passw = tk.Button(frame_opt, text='Password', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
 btn_passw["font"] = font 
-btn_mag = tk.Button(frame_opt, text='Magnifier', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
+btn_mag = tk.Button(frame_opt, text='Magnifier', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
 btn_mag["font"] = font 
-btn_stocks = tk.Button(frame_opt, text='Stocks', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w", command = lambda: stocks(canvas, font))
+btn_stocks = tk.Button(frame_opt, text='Stocks', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: stocks(canvas, font))
 btn_stocks["font"] = font 
-btn_lottery = tk.Button(frame_opt, text='Lottery', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
-#btn_lottery = tk.Button(frame_opt, text='Lottery', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w", command = ask())
+btn_lottery = tk.Button(frame_opt, text='Lottery', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
+#btn_lottery = tk.Button(frame_opt, text='Lottery', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "w", command = ask())
 btn_lottery["font"] = font 
-btn_cal = tk.Button(frame_opt, text='Calender', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w")
+btn_cal = tk.Button(frame_opt, text='Calender', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
 btn_cal["font"] = font 
-btn_music = tk.Button(frame_opt, text='Music', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w", command = lambda: youtube(canvas, font))
+btn_music = tk.Button(frame_opt, text='Youtube', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: youtube(canvas, font))
 btn_music["font"] = font 
-btn_news = tk.Button(frame_opt, text='News', width=8, height=2, bd=0, bg = "#34495E", fg = "white", anchor = "w") 
+btn_news = tk.Button(frame_opt, text='News', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center") 
 btn_news["font"] = font 
 
 #Packs
