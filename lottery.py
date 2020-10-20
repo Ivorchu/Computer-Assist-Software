@@ -167,25 +167,15 @@ def ask():
     9: threestarlottery_dict,
     10: fourstarlottery_dict,
     }
-<<<<<<< HEAD
-    statement = input("請問要搜尋哪種彩卷?")
-    
-=======
 
     statement = input("請問要搜尋哪種彩卷?")
->>>>>>> master
+
     for i in all_lottery:
         lottery_n = all_lottery[i]
         if statement == all_lottery[i]:
             for j in i:
-<<<<<<< HEAD
+
                 lottery_n[2]
-    
-
-ask()
-
-=======
-                lottery_n[2] 
 
     '''
       statement = input("請問要搜尋哪種彩卷?")
@@ -193,6 +183,4 @@ ask()
         if statement == all_lottery[i]:
             all_lottery[2] 
     '''
-
 ask()
->>>>>>> master
