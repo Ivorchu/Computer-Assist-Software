@@ -145,42 +145,20 @@ def fourstarlottery():
 
 
 def ask():
-    bingobingo_dict = {1: "賓果賓果", 2: bingobingo(), 3:"賓果", 4: "bingo"}
-    win_win_dict    = {1: "雙贏彩", 2: win_win()}
-    powercolor_dict = {1: "威力彩", 2: powercolor()}
-    lottery38_dict  = {1: "38樂台彩", 2: lottery38()}
-    biglottery_dict = {1: "大樂透", 2: biglottery()}
-    lottery49_dict  = {1: "49樂台彩", 2: lottery49()}
-    todaylottery539_dict  = {1: "今彩539", 2: todaylottery539()}
-    lottery39_dict  = {1: "39樂台彩", 2: lottery39()}
-    threestarlottery_dict = {1: "三星彩", 2: threestarlottery()}
-    fourstarlottery_dict  = {1: "四星彩", 2: fourstarlottery()}
     all_lottery = {
-    1: bingobingo_dict,
-    2: win_win_dict,
-    3: powercolor_dict,
-    4: lottery38_dict,
-    5: biglottery_dict,
-    6: lottery49_dict,
-    7: todaylottery539_dict,
-    8: lottery39_dict,
-    9: threestarlottery_dict,
-    10: fourstarlottery_dict,
+    "賓果賓果": bingobingo(),
+    "雙贏彩": win_win(),
+    "威力彩": powercolor(),
+    "38樂台彩": lottery38(),
+    "大樂透": biglottery(),
+    "49樂台彩": lottery49(),
+    "今彩539": todaylottery539(),
+    "39樂台彩": lottery39(),
+    "三星彩": threestarlottery(),
+    "四星彩": fourstarlottery(),
     }
 
     statement = input("請問要搜尋哪種彩卷?")
+    all_lottery[statement]
 
-    for i in all_lottery:
-        lottery_n = all_lottery[i]
-        if statement == all_lottery[i]:
-            for j in i:
-
-                lottery_n[2]
-
-    '''
-      statement = input("請問要搜尋哪種彩卷?")
-    for i in all_lottery:
-        if statement == all_lottery[i]:
-            all_lottery[2] 
-    '''
 ask()
