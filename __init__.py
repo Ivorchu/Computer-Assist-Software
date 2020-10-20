@@ -4,12 +4,10 @@ from tkinter import font as tkFont
 from tkinter import ttk
 from youtube import youtube
 from stock import stocks
-#from magnifier import 
+from magnifier import activateMagnifier
 #from lottery import ask
-#from reminder import 
+from reminder import *
 #from news import 
-#from texting import 
-#from autoscheduleplanner import
 
 #Initialize Window
 window = tk.Tk()

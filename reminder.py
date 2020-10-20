@@ -22,7 +22,14 @@ def overWrite():
 		writer.writeheader()
 		writer.writerows(temp)
 
+def printAll():
+	update()
+	global temp
+	for row in temp:
+		print(row)
+
 def addReminder(name, description='', date=datetime.now().date()):
+	update()
 	global temp
 	temp.append({'name':name, 'description':description, 'date':date})
 	overWrite()
@@ -80,4 +87,5 @@ def activateTime():
 		for row in temp:
 			if datetime.now().date() == (row['year'], row['month'], row['date']):
 				alert()
+
 
