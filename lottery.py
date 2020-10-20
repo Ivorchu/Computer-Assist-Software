@@ -143,22 +143,3 @@ def fourstarlottery():
     print("中獎號碼: " + list[6:15])
     print()
 
-
-def ask():
-    all_lottery = {
-    "賓果賓果": bingobingo(),
-    "雙贏彩": win_win(),
-    "威力彩": powercolor(),
-    "38樂台彩": lottery38(),
-    "大樂透": biglottery(),
-    "49樂台彩": lottery49(),
-    "今彩539": todaylottery539(),
-    "39樂台彩": lottery39(),
-    "三星彩": threestarlottery(),
-    "四星彩": fourstarlottery(),
-    }
-
-    statement = input("請問要搜尋哪種彩卷?")
-    all_lottery[statement]
-
-ask()
