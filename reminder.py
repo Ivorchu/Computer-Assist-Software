@@ -16,15 +16,15 @@ def update():
 def overWrite():
 	with open('reminder.csv', 'w') as reminderList:
 		global temp
-		fieldNames = ['name', 'description', 'date', 'hour', 'mint', 'minRemind']
+		fieldNames = ['name', 'description', 'date']
 		reader = csv.DictReader(reminderList, fieldnames=fieldNames)
 		writer = csv.DictWriter(reminderList, fieldnames=fieldNames)
 		writer.writeheader()
 		writer.writerows(temp)
 
-def addReminder(name, description='', date=datetime.now().date(), hour=0, mint=0, minRemind=0):
+def addReminder(name, description='', date=datetime.now().date()):
 	global temp
-	temp.append({'name':name, 'description':description, 'date':date, 'hour':hour, 'mint':mint, 'minRemind':minRemind})
+	temp.append({'name':name, 'description':description, 'date':date})
 	overWrite()
 
 def getReminderScript(name):
@@ -52,30 +52,6 @@ def getReminderMonth(name):
 	return 'Reminder Not Found!'
 
 def getReminderDate(name):
-	update()
-	global temp
-	for row in temp:
-		if name==row['name']:
-			return row['description']
-	return 'Reminder Not Found!'
-
-def getReminderHour(name):
-	update()
-	global temp
-	for row in temp:
-		if name==row['name']:
-			return row['description']
-	return 'Reminder Not Found!'
-
-def getReminderMint(name):
-	update()
-	global temp
-	for row in temp:
-		if name==row['name']:
-			return row['description']
-	return 'Reminder Not Found!'
-
-def getReminderMinRemind(name):
 	update()
 	global temp
 	for row in temp:
