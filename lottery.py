@@ -149,32 +149,21 @@ def fourstarlottery():
     return("四星彩 \n" + "中獎號碼: " + list[6:15])
 
 
-def main(window, font):
-    def ask():
-        all_lottery = {
-        "賓果賓果": bingobingo(),
-        "雙贏彩": win_win(),
-        "威力彩": powercolor(),
-        "38樂台彩": lottery38(),
-        "大樂透": biglottery(),
-        "49樂台彩": lottery49(),
-        "今彩539": todaylottery539(),
-        "39樂台彩": lottery39(),
-        "三星彩": threestarlottery(),
-        "四星彩": fourstarlottery(),
-        } 
-        all_lottery[statement]
+def ask():
+    all_lottery = {
+    "賓果賓果": bingobingo(),
+    "雙贏彩": win_win(),
+    "威力彩": powercolor(),
+    "38樂台彩": lottery38(),
+    "大樂透": biglottery(),
+    "49樂台彩": lottery49(),
+    "今彩539": todaylottery539(),
+    "39樂台彩": lottery39(),
+    "三星彩": threestarlottery(),
+    "四星彩": fourstarlottery(),
+    }
 
-       
-    # text = tk.Label(text = "Enter lottery", anchor = "center")
-    var = tk.StringVar()
-    #entry1 = tk.Entry(window)
-    content = tk.Entry(window, textvariable = var)
-    content.grid(row = 1, column = 1, pady = (150, 10), padx = 160) 
-    statement = var.get()
-    btn_exe = tk.Button(window, text='Search', width=5, height=1, bd=0, bg = "#D35400", fg = "white", anchor = "w", command = ask)
-    btn_exe["font"] = font 
-    btn_exe.grid(row = 2, column = 1, pady = (10, 150), padx = 160) 
+    statement = input("請問要搜尋哪種彩卷?")
+    all_lottery[statement]
 
-    
-   
+ask()
