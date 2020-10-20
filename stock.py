@@ -1,4 +1,3 @@
-import twstock 
 from selenium import webdriver
 import tkinter as tk
 import selenium 
@@ -11,7 +10,7 @@ def stocks(window, font):
 		options.add_argument("disable-infobars")
 		options.add_argument("--disable-extensions")
 		options.add_experimental_option("detach", True)
-		driver = webdriver.Chrome("C:\chromedriver_win32 (1)\chromedriver.exe", options=options)
+		driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe", options=options)
 		driver.get(url)
 
 	entry2 = tk.Entry(window)
