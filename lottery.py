@@ -182,7 +182,7 @@ def powercolor():
 
 
 def main(window, font):
-    def ask(content):
+    def ask(content, label1):
         statement = content.get()
         all_lottery = {
         "賓果賓果": bingobingo(),
@@ -196,15 +196,17 @@ def main(window, font):
         "三星彩": threestarlottery(),
         "四星彩": fourstarlottery()
         } 
-        label1 = tk.Label(window, text = "".join(all_lottery[statement]), bg = "white")
-        label1.grid(row = 1, column = 1, pady = (150, 10))
+        label1["text"] = "".join(all_lottery[statement]) 
+        label1.grid(row = 1, column = 1, pady = (150, 10)) 
         content.grid(row = 2, column = 1, pady = (10, 10), padx = 160) 
         
     # text = tk.Label(text = "Enter lottery", anchor = "center")
     #entry1 = tk.Entry(window)
+    label1 = tk.Label(window, text = "Enter lottery", bg = "white")
+    label1.grid(row = 1, column = 1, pady = (150, 10)) 
     content = tk.Entry(window)
-    content.grid(row = 2, column = 1, pady = (150, 10), padx = 160) 
-    btn_exe = tk.Button(window, text='Search', width=5, height=1, bd=0, bg = "#D35400", fg = "white", anchor = "w", command = lambda: ask(content))
+    content.grid(row = 2, column = 1, pady = (10, 10), padx = 160) 
+    btn_exe = tk.Button(window, text='Search', width=5, height=1, bd=0, bg = "#D35400", fg = "white", anchor = "w", command = lambda: ask(content, label1))
     btn_exe["font"] = font 
     btn_exe.grid(row = 3, column = 1, pady = (10, 160), padx = 160) 
 powercolor()
