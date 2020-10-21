@@ -53,14 +53,14 @@ btn_news = tk.Button(frame_opt, text='News', width=15, height=2, bd=0, bg = "#33
 btn_news["font"] = font 
 
 #Packs
-btn_home.grid(row=0, padx = (5, 7), pady = (20, 3))
+btn_home.grid(row=0, padx = (5, 7), pady = (10, 3))
 btn_passw.grid(row=1, padx = (5, 7), pady = 3)
 btn_mag.grid(row=2, padx = (5, 7), pady = 3)
 btn_stocks.grid(row=3, padx = (5, 7), pady = 3)
 btn_lottery.grid(row=4, padx = (5, 7), pady = 3)
 btn_cal.grid(row=5, padx = (5, 7), pady = 3)
 btn_music.grid(row=6, padx = (5, 7), pady = 3)
-btn_news.grid(row=7, padx = (5, 7), pady = (3, 20))
+btn_news.grid(row=7, padx = (5, 7), pady = (3, 10))
 
 #mainloop
 tk.mainloop()
