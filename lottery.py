@@ -1,28 +1,26 @@
-#coding:UTF-8
 import requests
+#coding:UTF-8
 from bs4 import BeautifulSoup
 import tkinter as tk
+import sys
+
+reload(sys)
+sys.setdefaultencoding("utf-8")
 
 r = requests.get("http://www.taiwanlottery.com.tw/")
 html_str = r.text
-soup = BeautifulSoup(html_str, "html.parser")
+soup = BeautifulSoup(html_str, "html.parser").prettify()
 
 #10 kinds of lottery
-
-def bingobingo():
-    bingobingo_1()
-    bingobingo_2()
-    bingobingo_3()
-    bingobingo_4()
-    return 0;
 
 
 def bingobingo_1():
     target = soup.find_all('div', class_='ball_box01')
-    list = ""
+    lst = ''
     for i in target:
-        list += i.text
-    return("賓果賓果BingoBingo \n" + "開出獎號: " + list)
+        lst += i.string
+    #return("賓果賓果BingoBingo \n" + "開出獎號: " + list)
+    return lst
 
     
     # 超級獎號
@@ -31,7 +29,8 @@ def bingobingo_2():
     list = ""
     for i in target:
         list += i.text
-    return("超級獎號: " + list[:2])
+    #return("超級獎號: " + list[:2])
+    return list[:2]
 
     
 def bingobingo_3():
@@ -40,7 +39,8 @@ def bingobingo_3():
     list = ""
     for i in target:
         list += i.text
-    return("猜大小: " + list[:2])
+    #return("猜大小: " + list[:2])
+    return list[:2]
 
 
 def bingobingo_4():
@@ -49,7 +49,8 @@ def bingobingo_4():
     list = ""
     for i in target:
         list += i.text
-    return("猜單雙: " + list[:2])
+    #return("猜單雙: " + list[:2])
+    return list[:2]
 
 
 def win_win():
@@ -57,12 +58,8 @@ def win_win():
     list = ""
     for i in target:
         list += i.text
-    return("雙贏彩 \n" + "開出順序: " + list[:36] + "\n" + "大小順序: " + list[36:])
-
-
-def powercolor():
-    powercolor_1()    
-    powercolor_2()
+    #return("雙贏彩 \n" + "開出順序: " + list[:36] + "\n" + "大小順序: " + list[36:])
+    return list[:36], list[36:]
 
 
 def powercolor_1():
@@ -70,15 +67,17 @@ def powercolor_1():
     list = ""
     for i in target:
         list += i.text
-    return("威力彩 \n" + "開出順序: " + list[:18] + "\n" + "大小順序: " + list[18:36])
-    
+    #return("威力彩 \n" + "開出順序: " + list[:18] + "\n" + "大小順序: " + list[18:36])
+    return list[:18], list[18:36]
+
 
 def powercolor_2():
     target = soup.find_all('div', class_='ball_red')
     list = ""
     for i in target:
         list += i.text
-    return("第二區: " + list[2:4])
+    #return("第二區: " + list[2:4])
+    return list[2:4]
 
 
 def lottery38():
@@ -86,20 +85,18 @@ def lottery38():
     list = ""
     for i in target:
         list += i.text
-    return("38樂台彩 \n" + "開出順序: " + list[36:54] + "\n" + "大小順序: " + list[54:72])
+    #return("38樂台彩 \n" + "開出順序: " + list[36:54] + "\n" + "大小順序: " + list[54:72])
+    return list[36:54], list[54:72]
 
-
-def biglottery():
-    biglottery_1()
-    biglottery_2()
 
 def biglottery_1():
     target = soup.find_all('div', class_='ball_tx ball_yellow')
     list = ""
     for i in target:
         list += i.text
-    return("大樂透 \n" + "開出順序: " + list[60:78] + "\n" + "大小順序: " + list[78:96])
-    
+    #return("大樂透 \n" + "開出順序: " + list[60:78] + "\n" + "大小順序: " + list[78:96])
+    return list[60:78], list[78:96]
+
 
     # 特別號
 def biglottery_2():
@@ -107,7 +104,8 @@ def biglottery_2():
     list = ""
     for i in target:
         list += i.text
-    return("特別號:" + list[4:7])
+    #return("特別號:" + list[4:7])
+    return list[4:7]
 
 
 def lottery49():
@@ -115,7 +113,8 @@ def lottery49():
     list = ""
     for i in target:
         list += i.text
-    return("49樂台彩 \n" + "開出順序: " + list[96:114] + "\n" + "大小順序: " + list[114:132])
+    #return("49樂台彩 \n" + "開出順序: " + list[96:114] + "\n" + "大小順序: " + list[114:132])
+    return list[96:114], list[114:132]
 
 
 def todaylottery539():
@@ -123,14 +122,17 @@ def todaylottery539():
     list = ""
     for i in target:
         list += i.text
-    return("今彩539 \n" + "開出順序: " + list[:15] + "\n" + "大小順序: " + list[15:30])
+    #return("今彩539 \n" + "開出順序: " + list[:15] + "\n" + "大小順序: " + list[15:30])
+    return list[:15], list[15:30]
+
 
 def lottery39():
     target = soup.find_all('div', class_='ball_tx ball_lemon')
     list = ""
     for i in target:
         list += i.text
-    return("39樂台彩 \n" + "開出順序: " + list[30:45] + "\n" +"大小順序: " + list[45:63])
+    #return("39樂台彩 \n" + "開出順序: " + list[30:45] + "\n" +"大小順序: " + list[45:63])
+    return list[30:45], list[45:63]
 
 
 def threestarlottery():
@@ -138,7 +140,8 @@ def threestarlottery():
     list = ""
     for i in target:
         list += i.text +" "
-    return("三星彩\n" + "中獎號碼: " + list[:6])
+    #return("三星彩\n" + "中獎號碼: " + list[:6])
+    return list[:6]
 
 
 def fourstarlottery():
@@ -146,7 +149,21 @@ def fourstarlottery():
     list = ""
     for i in target:
         list += i.text + " "
-    return("四星彩 \n" + "中獎號碼: " + list[6:15])
+    #return("四星彩 \n" + "中獎號碼: " + list[6:15])
+    return list[6:15]
+
+
+def bingobingo():
+    return bingobingo_1(), bingobingo_2(), bingobingo_3(), bingobingo_4()
+
+
+
+def biglottery():
+    return biglottery_1(), biglottery_2()
+
+
+def powercolor():
+    return powercolor_1(), powercolor_2()
 
 
 def main(window, font):
@@ -176,4 +193,4 @@ def main(window, font):
     btn_exe["font"] = font 
     btn_exe.grid(row = 2, column = 1, pady = (10, 150), padx = 160) 
 
-
+powercolor()
