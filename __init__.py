@@ -1,4 +1,5 @@
 #coding:UTF-8
+
 import tkinter as tk
 from tkinter import * 
 from tkinter import font as tkFont
@@ -35,21 +36,21 @@ def clear_frame():
 	return 0
 
 #Buttons
-btn_home = tk.Button(frame_opt, text='Home', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
+btn_home = tk.Button(frame_opt, text='Home', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
 btn_home["font"] = font 
-btn_passw = tk.Button(frame_opt, text='Password', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
+btn_passw = tk.Button(frame_opt, text='Password', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
 btn_passw["font"] = font 
-btn_mag = tk.Button(frame_opt, text='Magnifier', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
+btn_mag = tk.Button(frame_opt, text='Magnifier', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
 btn_mag["font"] = font 
-btn_stocks = tk.Button(frame_opt, text='Stocks', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: stocks(canvas, font))
+btn_stocks = tk.Button(frame_opt, text='Stocks', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: stocks(canvas, font))
 btn_stocks["font"] = font 
-btn_lottery = tk.Button(frame_opt, text='Lottery', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: main(canvas, font))
+btn_lottery = tk.Button(frame_opt, text='Lottery', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: main(canvas, font))
 btn_lottery["font"] = font 
-btn_cal = tk.Button(frame_opt, text='Calender', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
+btn_cal = tk.Button(frame_opt, text='Calender', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
 btn_cal["font"] = font 
-btn_music = tk.Button(frame_opt, text='Youtube', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: youtube(canvas, font))
+btn_music = tk.Button(frame_opt, text='Youtube', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: youtube(canvas, font))
 btn_music["font"] = font 
-btn_news = tk.Button(frame_opt, text='News', width=15, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center") 
+btn_news = tk.Button(frame_opt, text='News', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center") 
 btn_news["font"] = font 
 
 #Packs
