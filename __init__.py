@@ -1,3 +1,4 @@
+#coding:UTF-8
 import tkinter as tk
 from tkinter import * 
 from tkinter import font as tkFont
@@ -9,12 +10,14 @@ from lottery import main
 from reminder import *
 #from news import 
 
+
 #Initialize Window
 window = tk.Tk()
 window.geometry("600x400")
 window.resizable(0, 0)
 window.title('Computer Assist Software') 
-font = tkFont.Font(family = "Arial", size = 9) 
+font = tkFont.Font(family = "Arial", size = 11) 
+font_chi = tkFont.Font(family = "Times New Roman", size = 11)
 
 #Frames
 frame_opt = tk.Frame(window, height= 500, width=200, bg='#33383E')
