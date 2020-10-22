@@ -18,18 +18,18 @@ def refreshNews(window, font):
 
     total_rows = len(lst) 
     total_columns = len(lst[0])
-    text = tk.Text(window, width=80, fg='blue', font=font)
+    text = tk.Text(window, width=80, fg='blue', font=font, padx = 10, pady = 5) 
     for i in range(total_rows): 
         for j in range(total_columns): 
-            text.grid(row=i, column=j) 
+            text.grid(row=3, column=0) 
             text.insert(END, lst[i][j])
             text.insert(END, '\n')
     entry = tk.Entry(window)
-    entry.grid(row = 0, column = 1, pady = 5) 
-    btn_exe = tk.Button(window, text='Search', width=5, height=1, bd=0, bg = "#D35400", fg = "white", anchor = "w", command = search)
+    entry.grid(row = 1, column = 0, pady = 5, padx = (0, 220))   
+    btn_exe = tk.Button(window, text='Search', width=5, height=1, bd=0, bg = "#D35400", fg = "white", anchor = "center", command = search)
     btn_exe["font"] = font 
-    btn_exe.grid(row = 1, column = 1, pady = 5)
-    
+    btn_exe.grid(row = 2, column = 0, pady = 5, padx = (0, 220))
+
 
 def search():
     options = webdriver.ChromeOptions()
