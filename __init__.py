@@ -1,14 +1,15 @@
 #coding:UTF-8
 
-import tkinter as tk
+import tkinter as tk 
 from tkinter import * 
-from tkinter import font as tkFont
-from tkinter import ttk
-from youtube import youtube
-from stock import stocks
-#from magnifier import activateMagnifier
-#from lottery import main
-#from reminder import *
+from tkinter import font as tkFont 
+from tkinter import ttk 
+from youtube import youtube 
+from stock import stocks 
+from magnifier import activateMagnifier 
+from lottery import main 
+from reminder import * 
+from runautohotkey import runautohotkey 
 from news import refreshNews
 
 
@@ -29,11 +30,11 @@ canvas = tk.Frame(window, height = 500, width = 500, bg = "#FFFFFF")
 canvas.pack()
 
 # clear frame (canvas)
-def clearFrame(frame):
-	for widget in frame.winfo_children():
-		widget.destroy()
-		frame.pack_forget()
-		frame.pack()
+def clear_frame():
+	#canvas.destroy() 
+	#canvas.pack_forget()
+	#canvas.grid_forget()
+	return 0
 
 
 #Buttons
@@ -41,7 +42,7 @@ btn_home = tk.Button(frame_opt, text='主畫面', width=12, height=2, bd=0, bg =
 btn_home["font"] = font 
 btn_passw = tk.Button(frame_opt, text='帳號密碼管理', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
 btn_passw["font"] = font 
-btn_mag = tk.Button(frame_opt, text='放大鏡', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center")
+btn_mag = tk.Button(frame_opt, text='Magnifier', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: activateMagnifier(font))
 btn_mag["font"] = font 
 btn_stocks = tk.Button(frame_opt, text='股票', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: stocks(canvas, font))
 btn_stocks["font"] = font 

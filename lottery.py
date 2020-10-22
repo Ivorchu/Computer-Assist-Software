@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
 import tkinter as tk
-import sys
 
 #reload(sys)
 #sys.setdefaultencoding("utf-8")

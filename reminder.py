@@ -27,13 +27,11 @@ def printAll(window, font):
 	update()
 	global temp
 	i = 0
-    for row in temp:   
-			
-			e = tk.Entry(window, width=20, fg='blue', font=font) 
-                  
-			e.grid(row=i) 
-			e.insert(END, row)
-			i+=1
+	for row in temp:
+		e = tk.Entry(window, width=20, fg='blue', font=font)
+		e.grid(row=i)
+		e.insert(END, row)
+		i+=1
 
 def addReminder(name, description='', date=datetime.now().date()):
 	update()

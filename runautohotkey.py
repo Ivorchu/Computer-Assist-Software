@@ -1,4 +1,4 @@
 import ahk
-
-ahk.start()
-ahk.ready()
+def runautohotkey():
+    ahk.start()
+    ahk.ready()
