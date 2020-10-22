@@ -4,12 +4,12 @@ import tkinter as tk
 from tkinter import * 
 from tkinter import font as tkFont
 from tkinter import ttk
-from youtube import youtube
-from stock import stocks
+#from youtube import youtube
+#from stock import stocks
 #from magnifier import activateMagnifier
-from lottery import main
+#from lottery import main
 from reminder import *
-#from news import 
+from news import refreshNews
 
 
 #Initialize Window
@@ -50,7 +50,7 @@ btn_cal = tk.Button(frame_opt, text='Calender', width=12, height=2, bd=0, bg = "
 btn_cal["font"] = font 
 btn_music = tk.Button(frame_opt, text='Youtube', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: youtube(canvas, font))
 btn_music["font"] = font 
-btn_news = tk.Button(frame_opt, text='News', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center") 
+btn_news = tk.Button(frame_opt, text='News', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: refreshNews(canvas, font)) 
 btn_news["font"] = font 
 
 #Packs
