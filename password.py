@@ -13,56 +13,37 @@ def run(window, font):
 	combo.grid(row = 1, column = 1, pady = 5) 
 	combo.current(0)
 	result = ""
+	def setup():
+		acc = tk.StringVar()
+		account = tk.Entry(window, textvariable = acc)
+		account["font"] = font
+		account.insert(0, '帳號')
+		account.grid(row = 4, column = 1, pady = (10), padx = 160) 
+		acc = acc.get()
+
+		passw = tk.StringVar()
+		password = tk.Entry(window, textvariable = passw)
+		password["font"] = font
+		password.insert(0, '密碼')
+		password.grid(row = 5, column = 1, pady = (10), padx = 160) 
+		passw = passw.get()
+
+		btn = tk.Button(window, text='儲存', width=5, height=1, bd=0, bg = "#D35400", fg = "white")
+		btn["font"] = font
+		btn.grid(row = 6, column = 1, pady = 10, padx = 160)
 	def getResult():
 		if combo.get() == 'Google':
 			label = tk.Label(window, text = "請輸入您的Google帳戶及密碼")
 			label["font"] = font
 			label.grid(row = 3, column = 1, pady = 5) 
-
-			acc = tk.StringVar()
-			account = tk.Entry(window, textvariable = acc)
-			account["font"] = font
-			account.insert(0, '帳號')
-			account.grid(row = 4, column = 1, pady = (10), padx = 160) 
-			acc = acc.get()
-
-			passw = tk.StringVar()
-			password = tk.Entry(window, textvariable = passw)
-			password["font"] = font
-			password.insert(0, '密碼')
-			password.grid(row = 5, column = 1, pady = (10), padx = 160) 
-			passw = passw.get()
-
-			btn = tk.Button(window, text='儲存', width=5, height=1, bd=0, bg = "#D35400", fg = "white")
-			btn["font"] = font
-			btn.grid(row = 6, column = 1, pady = 10, padx = 160)
-
+			setup()
 			window.update() 
 			window.update_idletasks()
-
 		elif combo.get() == combo['values'][2]:
 			label = tk.Label(window, text = "請輸入您的Facebook帳戶及密碼")
 			label["font"] = font
 			label.grid(row = 3, column = 1, pady = 10) 
-
-			acc = tk.StringVar()
-			account = tk.Entry(window, textvariable = acc)
-			account["font"] = font
-			account.insert(0, '帳號')
-			account.grid(row = 4, column = 1, pady = 10, padx = 160) 
-			acc = acc.get()
-
-			passw = tk.StringVar()
-			password = tk.Entry(window, textvariable = passw)
-			password["font"] = font
-			password.insert(0, '密碼')
-			password.grid(row = 5, column = 1, pady = 10, padx = 160) 
-			passw = passw.get()
-
-			btn = tk.Button(window, text='儲存', width=5, height=1, bd=0, bg = "#D35400", fg = "white")
-			btn["font"] = font
-			btn.grid(row = 6, column = 1, pady = 10, padx = 160)
-
+			setup()
 			window.update() 
 			window.update_idletasks()
 
