@@ -18,10 +18,13 @@ def youtube(window, font):
         vid = driver.find_element_by_xpath("//*[@id='dismissable']/ytd-thumbnail/a").get_attribute("href")
         driver.get(vid) 
     #Main 
+    label1 = tk.Label(window, text = "請輸入音樂關鍵字")
+    label1["font"] = font
+    label1.grid(row = 1, column = 1, pady = (130, 20), padx = 140)
     entry1 = tk.Entry(window)
-    entry1.grid(row = 1, column = 1, pady = (150, 10), padx = 160) 
-    btn_exe = tk.Button(window, text='Watch', width=5, height=1, bd=0, bg = "#D35400", fg = "white", anchor = "w", command = watch)
+    entry1.grid(row = 2, column = 1, pady = 10, padx = 160) 
+    btn_exe = tk.Button(window, text='搜尋', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = watch)
     btn_exe["font"] = font 
-    btn_exe.grid(row = 2, column = 1, pady = (10, 150), padx = 160) 
+    btn_exe.grid(row = 3, column = 1, pady = (10, 160), padx = 160) 
 
     

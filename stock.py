@@ -14,11 +14,11 @@ def stocks(window, font):
 		driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe", options=options)
 		driver.get(url)
 	
-	label1 = tk.Label(window, text = "請輸入股票號碼 ", bg = "white")
+	label1 = tk.Label(window, text = "請輸入股票號碼 ")
 	label1["font"] = font
-	label1.grid(row = 1, column = 1, pady = (130, 10), padx = 140)
+	label1.grid(row = 1, column = 1, pady = (130, 20), padx = 140)
 	entry2 = tk.Entry(window)
-	entry2.grid(row = 2, column = 1, padx = 140)
-	btn_exe = tk.Button(window, text='查詢', width=6, height=1, bd=0, bg = "#D35400", fg = "white", command = exec)
+	entry2.grid(row = 2, column = 1, pady = 10, padx = 160)
+	btn_exe = tk.Button(window, text='查詢', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = exec)
 	btn_exe["font"] = font
-	btn_exe.grid(row = 3, column = 1, pady = (10, 150), padx = 140)
+	btn_exe.grid(row = 3, column = 1, pady = 10, padx = 160)
