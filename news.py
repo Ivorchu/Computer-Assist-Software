@@ -26,7 +26,7 @@ def refreshNews(window, font):
             text.insert(END, '\n')
     entry = tk.Entry(window)
     entry.grid(row = 1, column = 0, pady = 5, padx = (0, 220))   
-    btn_exe = tk.Button(window, text='Search', width=5, height=1, bd=0, bg = "#D35400", fg = "white", anchor = "center", command = search)
+    btn_exe = tk.Button(window, text='搜尋', width=5, height=1, bd=0, bg = "#D35400", fg = "white", anchor = "center", command = search)
     btn_exe["font"] = font 
     btn_exe.grid(row = 2, column = 0, pady = 5, padx = (0, 220))
 
