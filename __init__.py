@@ -29,11 +29,11 @@ canvas = tk.Frame(window, height = 500, width = 600)
 canvas.pack()
 
 # clear frame (canvas)
-def clear_frame():
-	#canvas.destroy()
-	#canvas.pack_forget()
-	#canvas.grid_forget()
-	return 0
+def clearFrame(frame):
+	for widget in frame.winfo_children():
+		widget.destroy()
+		frame.pack_forget()
+		frame.pack()
 
 def Home():
 	canvas = Canvas(window, width = 300, height = 300)      
