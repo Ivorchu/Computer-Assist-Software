@@ -14,7 +14,7 @@ from password import run
 
 #Initialize Window
 window = tk.Tk()
-window.geometry("600x400")
+window.geometry("700x430")
 window.resizable(0, 0)
 window.title('Computer Assist Software') 
 font = tkFont.Font(family = "Arial", size = 12)
