@@ -7,8 +7,6 @@ import tkinter as tk
 url = 'https://udn.com/news/breaknews/'
 
 def refreshNews(window, font):
-    scrollbar = Scrollbar(window)
-    scrollbar.pack( side = RIGHT, fill = Y )
     html = requests.get(url)
     soup = BeautifulSoup(html.text, 'html.parser')
     lst = []
@@ -23,10 +21,8 @@ def refreshNews(window, font):
     for i in range(total_rows): 
         for j in range(total_columns): 
                   
-            e = tk.Listbox(window, yscrollcommand=scrollbar.set) 
+            e = tk.Entry(window, width=20, fg='blue', font=font) 
                   
             e.grid(row=i, column=j) 
             e.insert(END, lst[i][j])
 
-    e.pack(side=LEFT, fill=BOTH)
-    scrollbar.config(command = e.yview)
