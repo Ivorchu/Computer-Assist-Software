@@ -28,12 +28,12 @@ canvas = tk.Frame(window, height = 500, width = 600)
 canvas.pack()
 
 # clear frame (canvas)
-def clear_frame():
-	#canvas.destroy() 
-	#canvas.pack_forget()
-	#canvas.grid_forget()
-	return 0
-
+def clearFrame(frame):
+	for widget in frame.winfo_children():
+		widget.destroy()
+		frame.pack_forget()
+		frame.pack()
+	
 
 #Buttons
 btn_home = tk.Button(frame_opt, text='主畫面', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas)])
