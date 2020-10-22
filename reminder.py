@@ -26,12 +26,15 @@ def overWrite():
 def printAll(window, font):
 	update()
 	global temp
-	i = 0
-	for row in temp:
-		e = tk.Entry(window, width=20, fg='blue', font=font)
-		e.grid(row=i)
-		e.insert(END, row)
-		i+=1
+
+	total_rows = len(temp) 
+	total_columns = 3
+	text = tk.Text(window, width=80, fg='blue', font=font, padx = 10, pady = 5)
+	for i in range(total_rows): 
+		for j in range(total_columns): 
+			text.grid(row=3, column=0) 
+			text.insert(END, temp[i][j])
+			text.insert(END, '\n')
 
 def addReminder(name, description='', date=datetime.now().date()):
 	update()
