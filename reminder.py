@@ -2,6 +2,7 @@ from datetime import datetime
 import time
 import csv
 import calendar
+import tkinter as tk
 
 temp = list()
 
@@ -22,11 +23,17 @@ def overWrite():
 		writer.writeheader()
 		writer.writerows(temp)
 
-def printAll():
+def printAll(window, font):
 	update()
 	global temp
-	for row in temp:
-		print(row)
+	i = 0
+    for row in temp:   
+			
+			e = tk.Entry(window, width=20, fg='blue', font=font) 
+                  
+			e.grid(row=i) 
+			e.insert(END, row)
+			i+=1
 
 def addReminder(name, description='', date=datetime.now().date()):
 	update()
