@@ -1,7 +1,6 @@
 from selenium import webdriver 
 import tkinter as tk 
 import selenium 
-from pytube import Youtube
 
 def youtube(window, font):
     def watch():
