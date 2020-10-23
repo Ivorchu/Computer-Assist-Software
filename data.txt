@@ -1,2 +1,14 @@
+<<<<<<< Updated upstream
 ethany8300918
 ethanyang2019077
+=======
+
+123	123
+321	321
+123
+123
+123
+123
+123
+123
+>>>>>>> Stashed changes

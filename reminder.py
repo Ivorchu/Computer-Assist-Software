@@ -30,7 +30,7 @@ def printAll(window, font):
 
 	reminder = tk.Label(window, text = '行事曆')
 	reminder.grid(row=1, column=0)
-	btn_add = tk.Button(window, text='新增', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: [clearFrame(window), addReminderPage(window, font)])
+	btn_add = tk.Button(window, text='新增', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: addReminderPage(window, font))
 	btn_add.grid(row=2, column=0)
 	total_rows = len(temp) 
 	total_columns = 3
@@ -59,8 +59,8 @@ def alert(name):
 			for data in row:
 				msg.append(data)
 				msg+='\n'
-    tk.messagebox.showinfo("提醒事項", msg)
-	
+	tk.messagebox.showinfo("提醒事項", msg)
+
 
 def activateTime():
 	update()

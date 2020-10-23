@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 import tkinter as tk
 from selenium import webdriver
+import time
 
 url = 'https://udn.com/news/breaknews/'
 
@@ -32,13 +33,16 @@ def refreshNews(window, font):
 
 
 def search():
+    global entry
     options = webdriver.ChromeOptions()
     options.add_argument("start-maximized")
     options.add_argument("disable-infobars")
     options.add_argument("--disable-extensions") 
     options.add_experimental_option("detach", True) 
     driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe", options=options)
-    driver.get(url+'search/word/2/'+entry.get())
-
+    driver.get('https://udn.com/search/word/2')
+    time.sleep(500)
+    driver.find_element_by_xpath("//input[@name='input-search'").send_keys(entry.get())
+    driver.find_element_by_class_name('i-search').click()
 
 
