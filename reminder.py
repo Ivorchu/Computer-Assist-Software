@@ -27,8 +27,10 @@ def printAll(window, font):
 	update()
 	global temp
 
-	reminder = tk.Label(window, '行事曆')
+	reminder = tk.Label(window, text = '行事曆')
+	reminder.grid(row=1, column=0)
 	btn_add = tk.Button(window, text='新增', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: addReminderPage(window, font))
+	btn_add.grid(row=2, column=0)
 	total_rows = len(temp) 
 	total_columns = 3
 	text = tk.Text(window, width=80, fg='blue', font=font, padx = 10, pady = 5)
