@@ -61,10 +61,20 @@ def run(window, font):
 			window.update() 
 			window.update_idletasks()
 
+	def instruct():
+		root = tk.Tk
+		root.title('指示')
+		root.geometry('100x100') 
+		root.resizable(0,0)
+		root.mainloop()
 
 	confirm = tk.Button(window, text='確定', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: getResult())
 	confirm["font"] = font
 	confirm.grid(row = 2, column = 1, pady = 5, padx = 10)
+	
+	instructions = tk.Button(window, text='使用指示', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: instruct())
+	instructions["font"] = font
+	instructions.grid(row = 2, column = 1, pady = 5, padx = 10)
 	#root = tk.Tk()
 
 	#root.mainloop()
