@@ -31,7 +31,7 @@ def run(window, font):
 
 		def importData():
 			f = open("data.ahk", "a")
-			f.write(""+acc+"\t"+passw)
+			f.write(""+acc+"\t"+passw+"\n")
 			f.close()
 
 		btn = tk.Button(window, text='儲存', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: importData())
@@ -61,6 +61,9 @@ def run(window, font):
 	confirm = tk.Button(window, text='確定', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: getResult())
 	confirm["font"] = font
 	confirm.grid(row = 2, column = 1, pady = 5, padx = 10)
+	#root = tk.Tk()
+
+	#root.mainloop()
 
 
 

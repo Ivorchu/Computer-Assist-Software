@@ -42,21 +42,21 @@ def Home():
 	canvas.create_image(20,20, anchor=NW, image=img)
 
 #Buttons
-btn_home = tk.Button(frame_opt, text='Home', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = Home)
+btn_home = tk.Button(frame_opt, text='主畫面', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = Home)
 btn_home["font"] = font 
 btn_passw = tk.Button(frame_opt, text='帳號密碼管理', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas), run(canvas, font)])
 btn_passw["font"] = font 
 btn_mag = tk.Button(frame_opt, text='放大鏡', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),activateMagnifier(font)])
 btn_mag["font"] = font 
-btn_stocks = tk.Button(frame_opt, text='Stocks', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),stocks(canvas, font)])
+btn_stocks = tk.Button(frame_opt, text='股票', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),stocks(canvas, font)])
 btn_stocks["font"] = font 
-btn_lottery = tk.Button(frame_opt, text='Lottery', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),main(canvas, font)])
+btn_lottery = tk.Button(frame_opt, text='彩卷', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),main(canvas, font)])
 btn_lottery["font"] = font 
-btn_remd = tk.Button(frame_opt, text='Reminder', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),printAll(canvas, font)])
+btn_remd = tk.Button(frame_opt, text='提醒 & 行事曆', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),printAll(canvas, font)])
 btn_remd["font"] = font 
-btn_music = tk.Button(frame_opt, text='Youtube', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),youtube(canvas, font)])
+btn_music = tk.Button(frame_opt, text='音樂 & Youtube', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),youtube(canvas, font)])
 btn_music["font"] = font 
-btn_news = tk.Button(frame_opt, text='News', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),refreshNews(canvas, font)]) 
+btn_news = tk.Button(frame_opt, text='新聞', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),refreshNews(canvas, font)]) 
 btn_news["font"] = font
 
 #Packs
