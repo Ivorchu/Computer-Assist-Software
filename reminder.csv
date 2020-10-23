@@ -1,2 +1,4 @@
 name,description,date
-PY_VAR0,PY_VAR1,"(<tkinter.StringVar object at 0x0000014BB73E7460>, <tkinter.StringVar object at 0x0000014BB73E74C0>, <tkinter.StringVar object at 0x0000014BB73E7520>)"
+test,Â²­z,"('2020', '10', '24')"
+test2,Â²­z,"('2020', '10', '24')"
+test3,Â²­z,"('2020', '10', '24')"

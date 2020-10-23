@@ -43,7 +43,9 @@ def printAll(window, font):
 	text = tk.Text(window, width=80, fg='blue', font=font, padx = 10, pady = 5)
 	text.grid(row=3, column=0)
 	for row in temp: 
-		text.insert(tk.END, row)
+		for data in row:
+			text.insert(tk.END, row[data])
+			text.insert(tk.END, ', ')
 		text.insert(tk.END, '\n')
 
 def addReminder(window, font, name, description='', date=datetime.now().date()):
@@ -98,20 +100,20 @@ def addReminderPage(window, font):
 
 	eventYear = tk.Entry(window, textvariable = year)
 	eventYear["font"] = font
-	eventYear.insert(0, '年')
+	eventYear.insert(0, datetime.now().year)
 	eventYear.grid(row = 3, column = 1, pady = 10, padx = 160) 
 
 	eventMonth = tk.Entry(window, textvariable = month)
 	eventMonth["font"] = font
-	eventMonth.insert(0, '月')
+	eventMonth.insert(0, datetime.now().month)
 	eventMonth.grid(row = 4, column = 1, pady = 10, padx = 160) 
 
 	eventDate = tk.Entry(window, textvariable = date)
 	eventDate["font"] = font
-	eventDate.insert(0, '日')
+	eventDate.insert(0, datetime.now().day)
 	eventDate.grid(row = 5, column = 1, pady = 10, padx = 160)  
 
-	btn = tk.Button(window, text='確認', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: [clearFrame(window), addReminder(window, font, name, description, (year, month, date)), printAll(window, font)])
+	btn = tk.Button(window, text='確認', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: [clearFrame(window), addReminder(window, font, name.get(), description.get(), (year.get(), month.get(), date.get())), printAll(window, font)])
 	btn["font"] = font
 	btn.grid(row = 6, column = 1, pady = 10, padx = 160)
 
