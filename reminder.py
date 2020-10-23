@@ -17,7 +17,7 @@ def update():
 def overWrite():
 	with open('reminder.csv', 'w') as reminderList:
 		global temp
-		fieldNames = ['name', 'description', 'year', 'month', 'date']
+		fieldNames = ['name', 'description', 'date']
 		reader = csv.DictReader(reminderList, fieldnames=fieldNames)
 		writer = csv.DictWriter(reminderList, fieldnames=fieldNames)
 		writer.writeheader()
@@ -28,9 +28,9 @@ def printAll(window, font):
 	global temp
 
 	reminder = tk.Label(window, '行事曆')
-	btn_add = tk.Button(window, text='新增', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: addReminderPage(window, font, name, description, year, month, date))
+	btn_add = tk.Button(window, text='新增', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: addReminderPage(window, font))
 	total_rows = len(temp) 
-	total_columns = 5
+	total_columns = 3
 	text = tk.Text(window, width=80, fg='blue', font=font, padx = 10, pady = 5)
 	text.grid(row=3, column=0)
 	for i in range(total_rows): 
@@ -38,7 +38,7 @@ def printAll(window, font):
 			text.insert(END, temp[i][j])
 			text.insert(END, '\n')
 
-def addReminder(window, font, name, description='', year=datetime.now().year(), month=datetime.now().month(), date=datetime.now().date()):
+def addReminder(window, font, name, description='', date=datetime.now().date()):
 	update()
 	global temp
 	temp.append({'name':name, 'description':description, 'date':date})
@@ -105,7 +105,7 @@ def addReminderPage(window, font):
 		eventDate.insert(0, '日')
 		eventDate.grid(row = 8, column = 1, pady = 10, padx = 160)  
 
-		btn = tk.Button(window, text='確認', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: [clearFrame(window), addReminder(window, font, name, description, year, month, date)])
+		btn = tk.Button(window, text='確認', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: [clearFrame(window), addReminder(window, font, name, description, (year, month, date))])
 		btn["font"] = font
 		btn.grid(row = 9, column = 1, pady = 10, padx = 160)
 
