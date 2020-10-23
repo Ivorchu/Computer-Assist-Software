@@ -58,7 +58,7 @@ def alert(name):
 		if name==row['name']:
 			for data in row:
 				msg.append(str(data)
-				msg.append('\n')
+				
     messagebox.showinfo("提醒事項", msg)
 	
 

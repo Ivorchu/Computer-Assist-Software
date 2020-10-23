@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import *
 from tkinter import ttk
+import os
 
 def run(window, font):
 	ask = tk.Label(window, text = "請選擇輸入Google或Facebook帳戶及密碼")
@@ -49,10 +50,11 @@ def run(window, font):
 			acnt = str(acnt)
 			psw = passw.get()
 			psw = str(psw)
-			f = open("data.txt", "a", encoding="utf-8")
-			content = "\n" + acnt + "\n" + psw
+			f = open("data.txt", "w", encoding="utf-8") #'a'
+			content = acnt + "\n" + psw
 			f.write(content)
 			f.close()
+			os.system('ahkData.ahk')
 
 
 		btn = tk.Button(window, text='儲存', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = importData)
@@ -83,4 +85,5 @@ def run(window, font):
 	confirm.grid(row = 2, column = 0, pady = 5, padx = 10)
 	
 	instruction_window()
+
 

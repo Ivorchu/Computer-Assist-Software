@@ -1,22 +1,23 @@
-FileRead, google, C:\Users\User\Desktop\Ethan\Programming\資通訊\Computer-Assist-Software\data.txt[1]
-FileRead, googlePassword, C:\Users\User\Desktop\Ethan\Programming\資通訊\Computer-Assist-Software\data.txt[2]
-FileRead, fb, C:\Users\User\Desktop\Ethan\Programming\資通訊\Computer-Assist-Software\data.txt[3]
-FileRead, fbPassword, C:\Users\User\Desktop\Ethan\Programming\資通訊\Computer-Assist-Software\data.txt[4]
+FileReadLine, account, 			C:\Users\User\Desktop\Ethan\Programming\資通訊\Computer-Assist-Software\data.txt, 1
+FileReadLine, password, 		C:\Users\User\Desktop\Ethan\Programming\資通訊\Computer-Assist-Software\data.txt, 2
+
+;FileReadLine, fb, 				C:\Users\User\Desktop\Ethan\Programming\資通訊\Computer-Assist-Software\data.txt, 4
+;FileReadLine, fbPassword, 		C:\Users\User\Desktop\Ethan\Programming\資通訊\Computer-Assist-Software\data.txt, 5
 
 ;按下Alt+g去gmail信箱
 !g::
-run, https//:www.gmail.com
+run, "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" -incognito "https://gmail.com"
 sleep, 2000
-send, %google% {enter}
+send, account {enter}
 sleep, 2000
-send, %googlePassword% {enter}
+send, password {enter}
 return
 
-;按下Alt+f去gmail信箱
+;按下Alt+f去fb
 !f::
-run, https//:www.facebook.com
+run, "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" -incognito "https://www.facebook.com" 
 sleep, 2000
-send, %fb% {enter}
+send, %account% {enter}
 sleep, 2000
-send, %fbPassword% {enter}
+send, %password% {enter}
 return
