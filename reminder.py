@@ -17,7 +17,7 @@ def update():
 def overWrite():
 	with open('reminder.csv', 'w') as reminderList:
 		global temp
-		fieldNames = ['name', 'description', 'date']
+		fieldNames = ['name', 'description', 'year', 'month', 'date']
 		reader = csv.DictReader(reminderList, fieldnames=fieldNames)
 		writer = csv.DictWriter(reminderList, fieldnames=fieldNames)
 		writer.writeheader()
@@ -36,11 +36,12 @@ def printAll(window, font):
 			text.insert(END, temp[i][j])
 			text.insert(END, '\n')
 
-def addReminder(name, description='', date=datetime.now().date()):
+def addReminder(window, font, name, description='', year=datetime.now().year(), month=datetime.now().month(), date=datetime.now().date()):
 	update()
 	global temp
 	temp.append({'name':name, 'description':description, 'date':date})
 	overWrite()
+	printAll(window, font)
 
 def getReminderScript(name):
 	update()
@@ -95,5 +96,47 @@ def activateTime():
 		for row in temp:
 			if datetime.now().date() == (row['year'], row['month'], row['date']):
 				alert()
+
+def addReminderPage(window, font):
+	title = tk.Label(window, "新增備忘錄")
+	title['font'] = font
+
+	title.grid(row = 0, column = 1, pady = (80, 10)) 
+	ask.grid(row = 0, column = 1, pady = (80, 10)) 
+	result = ""
+	name = tk.StringVar()
+	description = tk.StringVar()
+	year = tk.StringVar()
+	month = tk.StringVar()
+	date = tk.StringVar()
+	def setup():
+		eventName = tk.Entry(window, textvariable = name)
+		eventName["font"] = font
+		eventName.insert(0, '名稱')
+		eventName.grid(row = 4, column = 1, pady = 10, padx = 160) 
+
+		eventDesc = tk.Entry(window, textvariable = description)
+		eventDesc["font"] = font
+		eventDesc.insert(0, '簡述')
+		eventDesc.grid(row = 5, column = 1, pady = 10, padx = 160)
+
+		eventYear = tk.Entry(window, textvariable = year)
+		eventYear["font"] = font
+		eventYear.insert(0, '年')
+		eventYear.grid(row = 6, column = 1, pady = 10, padx = 160) 
+
+		eventMonth = tk.Entry(window, textvariable = month)
+		eventMonth["font"] = font
+		eventMonth.insert(0, '月')
+		eventMonth.grid(row = 7, column = 1, pady = 10, padx = 160) 
+
+		eventDate = tk.Entry(window, textvariable = date)
+		eventDate["font"] = font
+		eventDate.insert(0, '日')
+		eventDate.grid(row = 8, column = 1, pady = 10, padx = 160)  
+
+		btn = tk.Button(window, text='新增', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: addReminder(window, font, name, description, year, month, date))
+		btn["font"] = font
+		btn.grid(row = 9, column = 1, pady = 10, padx = 160)
 
 
