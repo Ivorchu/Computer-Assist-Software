@@ -18,14 +18,14 @@ def refreshNews(window, font):
 
     total_rows = len(lst) 
     total_columns = len(lst[0])
-    text = tk.Text(window, width=80, fg='blue', font=font, padx = 10, pady = 5) 
+    text = tk.Text(window, width=80, fg='blue', font=font, padx = 5, pady = 5) 
     for i in range(total_rows): 
         for j in range(total_columns): 
             text.grid(row=3, column=0) 
             text.insert(END, lst[i][j])
             text.insert(END, '\n')
-    entry = tk.Entry(window)
-    entry.grid(row = 1, column = 0, pady = 5, padx = (0, 220))   
+    entry = tk.Entry(window, width = 80)
+    entry.grid(row = 1, column = 0, pady = 5, padx = (5, 220))   
     btn_exe = tk.Button(window, text='搜尋', width=5, height=1, bd=0, bg = "#D35400", fg = "white", anchor = "center", command = search)
     btn_exe["font"] = font 
     btn_exe.grid(row = 2, column = 0, pady = 5, padx = (0, 220))

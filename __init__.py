@@ -3,13 +3,15 @@
 import tkinter as tk
 from tkinter import * 
 from tkinter import font as tkFont
-from tkinter import ttk
-#from stock import stocks
+from PIL import ImageTk, Image
+from stock import stocks
 #from magnifier import activateMagnifier
-#from lottery import main
-from reminder import *
+from lottery import main
+#from reminder import *
 from news import refreshNews
-#from password import run
+from password import run
+from youtube import youtube
+import os
 
 #Initialize Window
 window = tk.Tk()
@@ -20,11 +22,11 @@ font = tkFont.Font(family = "Arial", size = 12)
 font_chi = tkFont.Font(family = "Times New Roman", size = 12)
 
 #Frames
-frame_opt = tk.Frame(window, height= 700, width=430, bg='#33383E')
+frame_opt = tk.Frame(window, height= 450, width=700, bg='#33383E')
 frame_opt.pack(side='left')
 
 #Content
-canvas = tk.Frame(window, height = 500, width = 600)
+canvas = tk.Frame(window, height = 700, width = 600)
 canvas.pack()
 
 # clear frame (canvas)
@@ -34,16 +36,19 @@ def clearFrame(frame):
 		frame.pack_forget()
 		frame.pack()
 
-def Home():
-	canvas = Canvas(window, width = 300, height = 300)      
-	canvas.pack()   
-	img = PhotoImage(file=r"profile_img.png")
-	canvas.create_image(20,20, anchor=NW, image=img)
+def Home(window):
+	image = Image.open('profile_img.png')
+	image = image.resize((450, 320), Image.ANTIALIAS)
+	img = ImageTk.PhotoImage(image)
+	panel = tk.Label(window, image = img)
+	panel.pack(side = "bottom", fill = "both", expand = "yes")
+	#canvas['bg'] = "#483D8B"
+	window.mainloop()
 
 #Buttons
-btn_home = tk.Button(frame_opt, text='主畫面', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = Home)
+btn_home = tk.Button(frame_opt, text='主畫面', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas), Home(canvas)])
 btn_home["font"] = font 
-btn_passw = tk.Button(frame_opt, text='帳號密碼管理', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas), run(canvas, font)])
+btn_passw = tk.Button(frame_opt, text='帳號 & 密碼管理', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas), run(canvas, font)])
 btn_passw["font"] = font 
 btn_mag = tk.Button(frame_opt, text='放大鏡', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),activateMagnifier(font)])
 btn_mag["font"] = font 
