@@ -20,7 +20,6 @@ def overWrite():
 	with open('reminder.csv', 'w') as reminderList:
 		global temp
 		fieldNames = ['name', 'description', 'date']
-		reader = csv.DictReader(reminderList, fieldnames=fieldNames)
 		writer = csv.DictWriter(reminderList, fieldnames=fieldNames)
 		writer.writeheader()
 		writer.writerows(temp)
@@ -54,10 +53,13 @@ def currentTime():
 def alert(name):
 	update()
 	global temp
+	msg=''
 	for row in temp:
 		if name==row['name']:
-			msg = row
-    messagebox.showinfo("提醒事項", str(msg))
+			for data in row:
+				msg.append(str(data)
+				msg.append('\n')
+    messagebox.showinfo("提醒事項", msg)
 	
 
 def activateTime():
