@@ -5,9 +5,9 @@ from tkinter import *
 from tkinter import font as tkFont
 from PIL import ImageTk, Image
 from stock import stocks
-#from magnifier import activateMagnifier
+from magnifier import activateMagnifier
 from lottery import main
-#from reminder import *
+from reminder import *
 from news import refreshNews
 from password import run
 from youtube import youtube
@@ -71,7 +71,7 @@ btn_stocks = tk.Button(frame_opt, text='股票', width=12, height=2, bd=0, bg = 
 btn_stocks["font"] = font 
 btn_lottery = tk.Button(frame_opt, text='彩卷', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),main(canvas, font)])
 btn_lottery["font"] = font 
-btn_remd = tk.Button(frame_opt, text='提醒 & 行事曆', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),printAll(canvas, font)])
+btn_remd = tk.Button(frame_opt, text='提醒 & 行事曆', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),printAll(canvas, font)],activateTime())
 btn_remd["font"] = font 
 btn_music = tk.Button(frame_opt, text='音樂 & Youtube', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),youtube(canvas, font)])
 btn_music["font"] = font 

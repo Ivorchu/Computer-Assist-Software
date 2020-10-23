@@ -57,9 +57,9 @@ def alert(name):
 	for row in temp:
 		if name==row['name']:
 			for data in row:
-				msg.append(str(data)
-				
-    messagebox.showinfo("提醒事項", msg)
+				msg.append(data)
+				msg+='\n'
+    tk.messagebox.showinfo("提醒事項", msg)
 	
 
 def activateTime():
