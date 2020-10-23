@@ -10,26 +10,36 @@ def run(window, font):
 	combo = ttk.Combobox(window, values=['', 'Google', 'Facebook'], state="readonly")
 	combo.grid(row = 1, column = 1, pady = 5) 
 	combo.current(0)
-	result = ""
-	acc = tk.StringVar()
-	passw = tk.StringVar()
+	result = ""	
+	
 	def setup():
+		acc = tk.StringVar()
 		account = tk.Entry(window, textvariable = acc)
 		account["font"] = font
 		account.insert(0, '帳號')
 		account.grid(row = 4, column = 1, pady = 10, padx = 160) 
+		acc = acc.get()
+		acc = str(acc)
 
+		passw = tk.StringVar()
 		password = tk.Entry(window, textvariable = passw)
 		password["font"] = font
 		password.insert(0, '密碼')
 		password.grid(row = 5, column = 1, pady = 10, padx = 160) 
+		passw = passw.get()
+		passw = str(passw)
 
-		btn = tk.Button(window, text='儲存', width=5, height=1, bd=0, bg = "#D35400", fg = "white")
+		def importData():
+			f = open("data.ahk", "a")
+			f.write(""+acc+"\t"+passw)
+			f.close()
+
+		btn = tk.Button(window, text='儲存', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: importData())
 		btn["font"] = font
 		btn.grid(row = 6, column = 1, pady = 10, padx = 160)
 
 		
-
+		
 	label = tk.Label(window, text = "")
 	label["font"] = font
 	def getResult():
@@ -37,8 +47,6 @@ def run(window, font):
 			label['text'] = "請輸入您的Google帳戶及密碼"
 			label.grid(row = 3, column = 1, pady = 5) 
 			setup()
-			acc = acc.get()
-			passw = passw.get()
 			window.update() 
 			window.update_idletasks()
 			
@@ -46,17 +54,9 @@ def run(window, font):
 			label['text'] = "請輸入您的Facebook帳戶及密碼"
 			label.grid(row = 3, column = 1, pady = 5) 
 			setup()
-			acc = acc.get()
-			passw = passw.get()
 			window.update() 
 			window.update_idletasks()
 
-		def importData():
-			f = open("data.ahk", "w")
-			f.write(""+acc+"\t"+passw)
-			f.close()
-
-		importData()
 
 	confirm = tk.Button(window, text='確定', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: getResult())
 	confirm["font"] = font
