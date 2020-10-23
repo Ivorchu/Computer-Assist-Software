@@ -7,7 +7,7 @@ from PIL import ImageTk, Image
 from stock import stocks
 #from magnifier import activateMagnifier
 from lottery import main
-from reminder import *
+#from reminder import *
 from news import refreshNews
 from password import run
 from youtube import youtube
@@ -37,7 +37,6 @@ def clearFrame(frame):
 
 def Home(window):
 	image = Image.open('profile_img.png')
-	image = image.resize((450, 320), Image.ANTIALIAS)
 	img = ImageTk.PhotoImage(image)
 	panel = tk.Label(window, image = img)
 	#panel.pack(side = "bottom", fill = "both", expand = "yes")
