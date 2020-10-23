@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import tkinter as tk
-
+from tkinter import ttk
 #reload(sys)
 #sys.setdefaultencoding("utf-8")
 r = requests.get("https://www.taiwanlottery.com.tw/index_new.aspx")
@@ -9,7 +9,6 @@ html_str = r.text
 soup = BeautifulSoup(html_str, "html.parser")
 
 #10 kinds of lottery
-
 
 def bingobingo_1():
     target = soup.find_all('div', class_='ball_box01')
@@ -176,11 +175,10 @@ def main(window, font):
         } 
         result["text"] = "".join(all_lottery[statement])
 
-
     label = tk.Label(window, text = "請輸入彩卷種類")
     label["font"] = font 
     label.grid(row = 1, column = 1, pady = (130,20), padx = 140)
-    content = tk.Entry(window)
+    content = ttk.Combobox(window, values=["大樂透", "威力彩", "賓果賓果", "雙贏彩", "三星彩", "四星彩", "今彩539", "38樂台彩", "39樂台彩", "49樂台彩"]) 
     content.grid(row = 2, column = 1, pady = 10, padx = 160)
     btn_exe = tk.Button(window, text='搜尋', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: ask(content, result))
     btn_exe["font"] = font 
