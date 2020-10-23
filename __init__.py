@@ -1,5 +1,5 @@
 #coding:UTF-8
-
+from selenium import webdriver
 import tkinter as tk
 from tkinter import * 
 from tkinter import font as tkFont
@@ -28,7 +28,6 @@ frame_opt.pack(side='left')
 #Content
 canvas = tk.Frame(window, height = 700, width = 600)
 canvas.pack()
-
 # clear frame (canvas)
 def clearFrame(frame):
 	for widget in frame.winfo_children():
@@ -41,9 +40,24 @@ def Home(window):
 	image = image.resize((450, 320), Image.ANTIALIAS)
 	img = ImageTk.PhotoImage(image)
 	panel = tk.Label(window, image = img)
-	panel.pack(side = "bottom", fill = "both", expand = "yes")
+	#panel.pack(side = "bottom", fill = "both", expand = "yes")
+	panel.grid(row = 0, column = 0, pady = (20, 0)) 
+	entry_ggl = tk.Entry(window, width = 50) 
+	entry_ggl.grid(row = 1, column = 0, pady = 10) 
+	def ggl_search():
+		#Chromedriver setup 
+		options = webdriver.ChromeOptions()
+		options.add_argument("start-maximized")
+		options.add_argument("disable-infobars")
+		options.add_argument("--disable-extensions")
+		options.add_experimental_option("detach", True)
+		driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe", options=options)
+		url = "https://www.google.com/search?q=" + entry_ggl.get() 
+		driver.get(url)
+	button_ggl = tk.Button(window, text = "搜尋", width = 5, height = 1, bg = "#D35400", fg = "white", command = ggl_search)
+	button_ggl.grid(row = 2, column = 0, pady = 10)
 	#canvas['bg'] = "#483D8B"
-	window.mainloop()
+	window.mainloop() 
 
 #Buttons
 btn_home = tk.Button(frame_opt, text='主畫面', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas), Home(canvas)])
