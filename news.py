@@ -18,10 +18,10 @@ def refreshNews(window, font):
 
     total_rows = len(lst) 
     total_columns = len(lst[0])
-    text = tk.Text(window, width=80, fg='blue', font=font, padx = 5, pady = 5) 
+    text = tk.Text(window, width=80, fg='blue', font=font) 
     for i in range(total_rows): 
         for j in range(total_columns): 
-            text.grid(row=3, column=0) 
+            text.grid(row=3, column=0, padx = 0) 
             text.insert(END, lst[i][j])
             text.insert(END, '\n')
     entry = tk.Entry(window, width = 80)

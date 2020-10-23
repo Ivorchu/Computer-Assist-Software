@@ -30,7 +30,7 @@ def run(window, font):
 		passw = str(passw)
 
 		def importData():
-			f = open("data.ahk", "a")
+			f = open("dataTest.txt", "a")
 			f.write(""+acc+"\t"+passw+"\n")
 			f.close()
 
