@@ -87,6 +87,6 @@ btn_lottery.grid(row=4, padx = (5, 7), pady = 3)
 btn_remd.grid(row=5, padx = (5, 7), pady = 3)
 btn_music.grid(row=6, padx = (5, 7), pady = 3)
 btn_news.grid(row=7, padx = (5, 7), pady = (3, 10))
-
+Home(canvas)
 #mainloop
 tk.mainloop()

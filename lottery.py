@@ -7,7 +7,7 @@ from tkinter import ttk
 r = requests.get("https://www.taiwanlottery.com.tw/index_new.aspx")
 html_str = r.text
 soup = BeautifulSoup(html_str, "html.parser")
-
+dates = soup.find_all("span", class_ = "font_black15")  
 #10 kinds of lottery
 
 def bingobingo_1():
@@ -46,22 +46,24 @@ def bingobingo_4():
     return bin_4
 
 
-def win_win():
+def win_win(): 
+    date = dates[1].text
     target = soup.find_all('div', class_='ball_tx ball_blue')
     lst  = str()
     for i in target:
         lst += i.text + " "
     win = "".join(lst [:48])
-    return "中獎號碼: " + win  
+    return date + "\n" + "中獎號碼: " + win  
 
 
 def powercolor_1():
+    date = dates[2].text
     target = soup.find_all('div', class_='ball_tx ball_green')
     lst = str()
     for i in target:
         lst += i.text + " "
     pc_1 = lst[:24]
-    return "中獎號碼: " + pc_1 + "\n"
+    return date + "\n" + "中獎號碼: " + pc_1 + "\n"
 
 
 def powercolor_2():
@@ -74,12 +76,13 @@ def powercolor_2():
 
 
 def lottery38():
+    date = dates[3].text
     target = soup.find_all('div', class_='ball_tx ball_green')
     lst = str()
     for i in target:
         lst += i.text + " "
     lot38 = "".join(lst [22:50])
-    return "中獎號碼： " + lot38
+    return date + "\n" + "中獎號碼： " + lot38
 
 
 def biglottery_1():
@@ -99,59 +102,66 @@ def biglottery_2():
 
 
 def lottery49():
+    date = dates[5].text
     target = soup.find_all('div', class_='ball_tx ball_yellow')
     lst = str()
     for i in target:
         lst += i.text + " "
     lot49 = "".join(lst [80:102])  
-    return "中獎號碼： " + lot49 
+    return date + "\n" + "中獎號碼： " + lot49 
 
 
 def todaylottery539():
+    date = dates[6].text
     target = soup.find_all('div', class_='ball_tx ball_lemon')
     lst = str()
     for i in target:
         lst += i.text + " "
     lot539 = "".join(lst [:18])
-    return "中獎號碼： " + lot539
+    return date + "\n" + "中獎號碼： " + lot539
 
 
 def lottery39():
+    date = dates[7].text
     target = soup.find_all('div', class_='ball_tx ball_lemon')
     lst = str()
     for i in target:
         lst += i.text + " "
     lot39 = "".join(lst[20:38])
-    return "中獎號碼： " + lot39
+    return date + "\n" + "中獎號碼： " + lot39
 
 
 def threestarlottery():
+    date = dates[8].text
     target = soup.find_all('div', class_='ball_tx ball_purple')
     lst = str()
     for i in target:
         lst += i.text + " "
     threestar = "".join(lst [:6]) 
-    return "中獎號碼：" + threestar
+    return date + "\n" + "中獎號碼：" + threestar
 
 
-def fourstarlottery():
+def fourstarlottery(): 
+    date = dates[9].text
     target = soup.find_all('div', class_='ball_tx ball_purple')
     lst = str()
     for i in target:
         lst += i.text + " "
     fourstar = "".join(lst[6:15])
-    return "中獎號碼： " + fourstar
+    return date + "\n" + "中獎號碼： " + fourstar
 
 
 def bingobingo():
-    return "開出獎號： " + bingobingo_1() + "\n", "超級獎號: " + bingobingo_2() + "\n", "猜大小: " + bingobingo_3() + "\n", "猜單雙: " + bingobingo_4()
+    date = dates[0].text
+    return date + "\n" + "開出獎號： " + bingobingo_1() + "\n", "超級獎號: " + bingobingo_2() + "\n", "猜大小: " + bingobingo_3() + "\n", "猜單雙: " + bingobingo_4()
 
 
 
 def biglottery():
+    date = dates[4].text 
     biglot_1 = "".join(biglottery_1())
     biglot_2 = "".join(biglottery_2())
-    return "中獎號碼： " + biglot_1 + "\n", "特別號: " + biglot_2
+    return date + "\n" + "中獎號碼： " + biglot_1 + "\n", "特別號: " + biglot_2
 
 
 def powercolor():
