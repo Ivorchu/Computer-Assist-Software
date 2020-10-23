@@ -30,10 +30,13 @@ def run(window, font):
 			acnt = str(acnt)
 			psw = passw.get()
 			psw = str(psw)
-			f = open("data.ahk", "a")
-			content = acnt + "\t" + psw + "\n"
-			f.write(content)
-			f.close()
+			f = open("data.ahk", "r", encoding="utf-8")
+			for i in f:
+				if i == "##### Data Starts #####":
+					f = open("data.ahk", "a", encoding="utf-8")
+					content = acnt + "\t" + psw + "\n"
+					f.write(content)
+					f.close()
 
 		btn = tk.Button(window, text='儲存', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = importData)
 		btn["font"] = font
