@@ -59,7 +59,7 @@ def alert(name):
 			for data in row:
 				msg.append(str(data)
 				msg.append('\n')
-    messagebox.showinfo("提醒事項", msg)
+    tk.messagebox.showinfo("提醒事項", msg)
 	
 
 def activateTime():
