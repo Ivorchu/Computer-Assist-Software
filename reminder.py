@@ -27,12 +27,14 @@ def printAll(window, font):
 	update()
 	global temp
 
+	reminder = tk.Label(window, '行事曆')
+	btn_add = tk.Button(window, text='新增', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: addReminderPage(window, font, name, description, year, month, date))
 	total_rows = len(temp) 
-	total_columns = 3
+	total_columns = 5
 	text = tk.Text(window, width=80, fg='blue', font=font, padx = 10, pady = 5)
+	text.grid(row=3, column=0)
 	for i in range(total_rows): 
 		for j in range(total_columns): 
-			text.grid(row=3, column=0) 
 			text.insert(END, temp[i][j])
 			text.insert(END, '\n')
 
@@ -42,38 +44,6 @@ def addReminder(window, font, name, description='', year=datetime.now().year(), 
 	temp.append({'name':name, 'description':description, 'date':date})
 	overWrite()
 	printAll(window, font)
-
-def getReminderScript(name):
-	update()
-	global temp
-	for row in temp:
-		if name==row['name']:
-			return row['description']
-	return 'Reminder Not Found!'
-
-def getReminderYear(name):
-	update()
-	global temp
-	for row in temp:
-		if name==row['name']:
-			return row['description']
-	return 'Reminder Not Found!'
-
-def getReminderMonth(name):
-	update()
-	global temp
-	for row in temp:
-		if name==row['name']:
-			return row['description']
-	return 'Reminder Not Found!'
-
-def getReminderDate(name):
-	update()
-	global temp
-	for row in temp:
-		if name==row['name']:
-			return row['description']
-	return 'Reminder Not Found!'
 
 def currentTime():
 	return time.localtime(time.clock())
@@ -135,7 +105,7 @@ def addReminderPage(window, font):
 		eventDate.insert(0, '日')
 		eventDate.grid(row = 8, column = 1, pady = 10, padx = 160)  
 
-		btn = tk.Button(window, text='新增', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: addReminder(window, font, name, description, year, month, date))
+		btn = tk.Button(window, text='確認', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: [clearFrame(window), addReminder(window, font, name, description, year, month, date)])
 		btn["font"] = font
 		btn.grid(row = 9, column = 1, pady = 10, padx = 160)
 

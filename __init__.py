@@ -7,7 +7,7 @@ from tkinter import ttk
 #from stock import stocks
 #from magnifier import activateMagnifier
 #from lottery import main
-from reminder import *
+#from reminder import *
 from news import refreshNews
 #from password import run
 
