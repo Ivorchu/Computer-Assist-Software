@@ -20,14 +20,15 @@ window.resizable(0, 0)
 window.title('Computer Assist Software') 
 font = tkFont.Font(family = "Arial", size = 12)
 font_chi = tkFont.Font(family = "Times New Roman", size = 12)
-
+window["bg"] = "#ABB2B9" 
 #Frames
 frame_opt = tk.Frame(window, height= 450, width=700, bg='#33383E')
 frame_opt.pack(side='left')
 
 #Content
-canvas = tk.Frame(window, height = 700, width = 600)
+canvas = tk.Frame(window, height = 700, width = 430)
 canvas.pack()
+canvas["bg"] = "#ABB2B9"
 # clear frame (canvas)
 def clearFrame(frame):
 	for widget in frame.winfo_children():
@@ -37,12 +38,14 @@ def clearFrame(frame):
 
 def Home(window):
 	image = Image.open('profile_img.png')
-	img = ImageTk.PhotoImage(image)
-	panel = tk.Label(window, image = img)
+	image = image.resize((450, 320), Image.ANTIALIAS)
+	image = image.crop([0,0,450,300])
+	img = ImageTk.PhotoImage(image) 
+	panel = tk.Label(window, image = img, borderwidth = 0, highlightthickness = 0)
 	#panel.pack(side = "bottom", fill = "both", expand = "yes")
-	panel.grid(row = 0, column = 0, pady = (20, 0)) 
+	panel.grid(row = 0, column = 0, pady = (10, 20)) 
 	entry_ggl = tk.Entry(window, width = 50) 
-	entry_ggl.grid(row = 1, column = 0, pady = 10) 
+	entry_ggl.grid(row = 1, column = 0, pady = 5) 
 	def ggl_search():
 		#Chromedriver setup 
 		options = webdriver.ChromeOptions()
@@ -54,8 +57,7 @@ def Home(window):
 		url = "https://www.google.com/search?q=" + entry_ggl.get() 
 		driver.get(url)
 	button_ggl = tk.Button(window, text = "搜尋", width = 5, height = 1, bg = "#D35400", fg = "white", command = ggl_search)
-	button_ggl.grid(row = 2, column = 0, pady = 10)
-	#canvas['bg'] = "#483D8B"
+	button_ggl.grid(row = 2, column = 0) 
 	window.mainloop() 
 
 #Buttons
