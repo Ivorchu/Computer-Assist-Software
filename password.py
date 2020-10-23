@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import *
 from tkinter import ttk
 
-
 def run(window, font):
 	ask = tk.Label(window, text = "請選擇輸入Google或Facebook帳戶及密碼")
 	ask["font"] = font
@@ -18,23 +17,25 @@ def run(window, font):
 		account["font"] = font
 		account.insert(0, '帳號')
 		account.grid(row = 4, column = 1, pady = 10, padx = 160) 
-		acc = acc.get()
-		acc = str(acc)
 
 		passw = tk.StringVar()
 		password = tk.Entry(window, textvariable = passw)
 		password["font"] = font
 		password.insert(0, '密碼')
 		password.grid(row = 5, column = 1, pady = 10, padx = 160) 
-		passw = passw.get()
-		passw = str(passw)
+
 
 		def importData():
-			f = open("dataTest.txt", "a")
-			f.write(""+acc+"\t"+passw+"\n")
+			acnt = acc.get()
+			acnt = str(acnt)
+			psw = passw.get()
+			psw = str(psw)
+			f = open("data.ahk", "a")
+			content = acnt + "\t" + psw + "\n"
+			f.write(content)
 			f.close()
 
-		btn = tk.Button(window, text='儲存', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: importData())
+		btn = tk.Button(window, text='儲存', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = importData)
 		btn["font"] = font
 		btn.grid(row = 6, column = 1, pady = 10, padx = 160)
 
