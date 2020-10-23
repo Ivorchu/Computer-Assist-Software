@@ -6,7 +6,7 @@ def activateMagnifier():
 	screenWidth = root.winfo_screenwidth()
 	screenHeight = root.winfo_screenheight()
 	root.geometry(str(screenWidth)+'x'+str(screenHeight)+'+0+0')
-	root.overrideredirection(True)
+	#root.overrideredirection(True)
 
 	root.resizable(False, False)
 

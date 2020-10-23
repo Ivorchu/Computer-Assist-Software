@@ -65,7 +65,7 @@ btn_home = tk.Button(frame_opt, text='主畫面', width=12, height=2, bd=0, bg =
 btn_home["font"] = font 
 btn_passw = tk.Button(frame_opt, text='帳號 & 密碼管理', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas), run(canvas, font)])
 btn_passw["font"] = font 
-btn_mag = tk.Button(frame_opt, text='放大鏡', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),activateMagnifier(font)])
+btn_mag = tk.Button(frame_opt, text='放大鏡', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),activateMagnifier()])
 btn_mag["font"] = font 
 btn_stocks = tk.Button(frame_opt, text='股票', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),stocks(canvas, font)])
 btn_stocks["font"] = font 
