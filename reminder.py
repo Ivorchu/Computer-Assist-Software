@@ -3,6 +3,7 @@ import time
 import csv
 import calendar
 import tkinter as tk
+from tkinter import messagebox
 
 temp = list()
 
@@ -11,6 +12,7 @@ def update():
 		reader = csv.DictReader(reminderList)
 
 		global temp
+		temp.clear()
 		for row in reader:
 			temp.append(row)
 
@@ -29,7 +31,7 @@ def printAll(window, font):
 
 	reminder = tk.Label(window, text = '行事曆')
 	reminder.grid(row=1, column=0)
-	btn_add = tk.Button(window, text='新增', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: addReminderPage(window, font))
+	btn_add = tk.Button(window, text='新增', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: [clearFrame(window), addReminderPage(window, font)])
 	btn_add.grid(row=2, column=0)
 	total_rows = len(temp) 
 	total_columns = 3
@@ -45,21 +47,18 @@ def addReminder(window, font, name, description='', date=datetime.now().date()):
 	global temp
 	temp.append({'name':name, 'description':description, 'date':date})
 	overWrite()
-	printAll(window, font)
 
 def currentTime():
 	return time.localtime(time.clock())
-
-def getCalendar(year=datetime.now().year, month=datetime.now().month):
-	return calendar.month(year, month)
 
 def alert(name):
 	update()
 	global temp
 	for row in temp:
 		if name==row['name']:
-			for i in row:
-				print(i)
+			msg = row
+    messagebox.showinfo("提醒事項", msg)
+	
 
 def activateTime():
 	update()
@@ -74,8 +73,6 @@ def addReminderPage(window, font):
 	title['font'] = font
 
 	title.grid(row = 0, column = 1, pady = (80, 10)) 
-	ask.grid(row = 0, column = 1, pady = (80, 10)) 
-	result = ""
 	name = tk.StringVar()
 	description = tk.StringVar()
 	year = tk.StringVar()
@@ -107,7 +104,7 @@ def addReminderPage(window, font):
 		eventDate.insert(0, '日')
 		eventDate.grid(row = 8, column = 1, pady = 10, padx = 160)  
 
-		btn = tk.Button(window, text='確認', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: [clearFrame(window), addReminder(window, font, name, description, (year, month, date))])
+		btn = tk.Button(window, text='確認', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: [clearFrame(window), addReminder(window, font, name, description, (year, month, date)), printAll(window, font)])
 		btn["font"] = font
 		btn.grid(row = 9, column = 1, pady = 10, padx = 160)
 
