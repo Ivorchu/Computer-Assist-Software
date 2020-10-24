@@ -2,6 +2,8 @@ import tkinter as tk
 from tkinter import *
 from tkinter import ttk
 import os
+import time
+import sys
 
 def run(window, font):
 	ask = tk.Label(window, text = "請選擇輸入Google或Facebook帳戶及密碼")
@@ -16,7 +18,7 @@ def run(window, font):
 	def instruct():
 		root = tk.Tk()
 		root.title('操作說明')
-		root.geometry('250x50') 
+		root.geometry('300x50') 
 		root.resizable(0,0)
 		intro = tk.Label(root, text = "按Alt+G登入Google並前往Gmail\n按Alt+F前往並登入Facebook")
 		intro["font"] = font
@@ -55,6 +57,7 @@ def run(window, font):
 			f.write(content)
 			f.close()
 			os.system('ahkData.ahk')
+
 
 
 		btn = tk.Button(window, text='儲存', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = importData)

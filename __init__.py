@@ -6,7 +6,7 @@ from tkinter import font as tkFont
 from PIL import ImageTk, Image
 from stock import stocks
 from magnifier import activateMagnifier
-from lottery import main
+#from lottery import main
 from reminder import *
 from news import refreshNews
 from password import run
@@ -89,4 +89,4 @@ btn_music.grid(row=6, padx = (5, 7), pady = 3)
 btn_news.grid(row=7, padx = (5, 7), pady = (3, 10))
 Home(canvas)
 #mainloop
-tk.mainloop()
+window.mainloop()
