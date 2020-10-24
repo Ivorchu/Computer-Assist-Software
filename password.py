@@ -54,12 +54,12 @@ def run(window, font):
 			psw = str(psw)
 
 			f = open("ahkData.ahk", "w", encoding = 'utf-8')
-			space = "\n\n\n"
+			f.write('\n\n\n')
 			f = open("ahkData.ahk", "r", encoding = 'utf-8')
 			lines = f.readlines()
 			lines[0] = "account = " + acnt 
 			lines[1] = "\npassword = " + psw
-			f = open("ahkData.ahk", "w", encoding = 'utf-8')
+			f = open("ahkData.ahk", "a", encoding = 'utf-8')
 			content = '''			
 ;按下Alt+g去gmail信箱
 !g::
@@ -79,7 +79,7 @@ sleep, 2000
 send, %fbPassword% {enter}
 return
 			'''
-			f.writelines(space)
+			
 			f.writelines(lines)
 			f.writelines(content)
 			f.close()
