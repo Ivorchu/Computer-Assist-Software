@@ -6,7 +6,7 @@ from tkinter import font as tkFont
 from PIL import ImageTk, Image
 from stock import stocks
 from magnifier import activateMagnifier
-#from lottery import main
+from lottery import main
 from reminder import *
 from news import refreshNews
 from password import run
@@ -65,8 +65,6 @@ btn_home = tk.Button(frame_opt, text='主畫面', width=12, height=2, bd=0, bg =
 btn_home["font"] = font 
 btn_passw = tk.Button(frame_opt, text='帳號 & 密碼管理', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas), run(canvas, font)])
 btn_passw["font"] = font 
-btn_mag = tk.Button(frame_opt, text='放大鏡', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),activateMagnifier()])
-btn_mag["font"] = font 
 btn_stocks = tk.Button(frame_opt, text='股票', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),stocks(canvas, font)])
 btn_stocks["font"] = font 
 btn_lottery = tk.Button(frame_opt, text='彩卷', width=12, height=2, bd=0, bg = "#33383E", fg = "white", anchor = "center", command = lambda: [clearFrame(canvas),main(canvas, font)])
@@ -79,14 +77,13 @@ btn_news = tk.Button(frame_opt, text='新聞', width=12, height=2, bd=0, bg = "#
 btn_news["font"] = font
 
 #Packs
-btn_home.grid(row=0, padx = (5, 7), pady = (10, 3))
+btn_home.grid(row=0, padx = (5, 7), pady = (40, 3))
 btn_passw.grid(row=1, padx = (5, 7), pady = 3)
-btn_mag.grid(row=2, padx = (5, 7), pady = 3)
-btn_stocks.grid(row=3, padx = (5, 7), pady = 3)
-btn_lottery.grid(row=4, padx = (5, 7), pady = 3)
-btn_remd.grid(row=5, padx = (5, 7), pady = 3)
-btn_music.grid(row=6, padx = (5, 7), pady = 3)
-btn_news.grid(row=7, padx = (5, 7), pady = (3, 10))
+btn_stocks.grid(row=2, padx = (5, 7), pady = 3)
+btn_lottery.grid(row=3, padx = (5, 7), pady = 3)
+btn_remd.grid(row=4, padx = (5, 7), pady = 3)
+btn_music.grid(row=5, padx = (5, 7), pady = 3)
+btn_news.grid(row=6, padx = (5, 7), pady = (3, 40))
 Home(canvas)
 #mainloop
 window.mainloop()

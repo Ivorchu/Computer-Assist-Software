@@ -18,7 +18,7 @@ def youtube(window, font):
         vid = driver.find_element_by_xpath("//*[@id='dismissable']/ytd-thumbnail/a").get_attribute("href")
         driver.get(vid) 
     #Main 
-    label1 = tk.Label(window, text = "請輸入音樂關鍵字")
+    label1 = tk.Label(window, text = "請輸入音樂關鍵字", bg = "#ABB2B9")
     label1["font"] = font
     label1.grid(row = 1, column = 1, pady = (130, 20), padx = 140)
     entry1 = tk.Entry(window)

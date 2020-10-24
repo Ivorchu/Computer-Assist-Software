@@ -40,9 +40,9 @@ def search():
     options.add_argument("--disable-extensions") 
     options.add_experimental_option("detach", True) 
     driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe", options=options)
-    driver.get('https://udn.com/search/word/2')
-    time.sleep(500)
-    driver.find_element_by_xpath("//input[@name='input-search'").send_keys(entry.get())
-    driver.find_element_by_class_name('i-search').click()
+    driver.get('https://tw.news.yahoo.com/')
+    time.sleep(1000)
+    driver.find_element_by_name("p").send_keys(entry.get())
+    driver.find_element_by_id('vert-search-button').click()
 
 

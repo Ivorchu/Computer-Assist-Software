@@ -39,18 +39,18 @@ def printAll(window, font):
 		names.append(row['name'])
 
 	reminder = tk.Label(window, text = '行事曆')
-	reminder.grid(row=1, column=0)
+	reminder.grid(row=1, column=0, padx = (0, 670))
 	btn_add = tk.Button(window, text='新增', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: [clearFrame(window), addReminderPage(window, font)])
-	btn_add.grid(row=2, column=0)
+	btn_add.grid(row=2, column=0, padx = (0, 670))
 	combo = ttk.Combobox(window, values=names, state="readonly")
-	combo.grid(row = 3, column = 0, pady = 5) 
+	combo.grid(row = 3, column = 0, pady = 5, padx = (5, 580)) 
 	combo.current(0)
 	btn_del = tk.Button(window, text='刪除', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: deleteReminder(window, font, combo.get()))
-	btn_del.grid(row=4, column=0)
+	btn_del.grid(row=4, column=0, padx = (0, 670))
 	total_rows = len(temp) 
 	total_columns = 3
-	text = tk.Text(window, width=80, fg='blue', font=font, padx = 10, pady = 5)
-	text.grid(row=5, column=0)
+	text = tk.Text(window, width=80, bg = "#2C3E50", fg='white', font=font, pady = 5)
+	text.grid(row=5, column=0, padx = (0, 25))
 	for row in temp: 
 		for data in row:
 			text.insert(tk.END, row[data])
