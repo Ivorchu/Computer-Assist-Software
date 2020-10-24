@@ -5,6 +5,7 @@ import requests
 import tkinter as tk
 from selenium import webdriver
 import time
+import pyautogui
 
 url = 'https://udn.com/news/breaknews/'
 
@@ -27,22 +28,20 @@ def refreshNews(window, font):
             text.insert(END, '\n')
     entry = tk.Entry(window, width = 50)
     entry.grid(row = 1, column = 0, pady = (10, 0), padx = (0, 150))    
-    btn_exe = tk.Button(window, text='搜尋', width=5, height=1, bd=0, bg = "#D35400", fg = "white", anchor = "center", command = search)
+    btn_exe = tk.Button(window, text='搜尋', width=5, height=1, bd=0, bg = "#D35400", fg = "white", anchor = "center", command = lambda: search(entry.get())) 
     btn_exe["font"] = font 
     btn_exe.grid(row = 2, column = 0, pady = 5, padx = (0, 170))
 
 
-def search():
-    global entry
+def search(content):
     options = webdriver.ChromeOptions()
     options.add_argument("start-maximized")
     options.add_argument("disable-infobars")
-    options.add_argument("--disable-extensions") 
-    options.add_experimental_option("detach", True) 
+    options.add_argument("--disable-extensions")
+    options.add_experimental_option("detach", True)
     driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe", options=options)
-    driver.get('https://tw.news.yahoo.com/')
-    time.sleep(1000)
-    driver.find_element_by_name("p").send_keys(entry.get())
-    driver.find_element_by_id('vert-search-button').click()
+    url = "https://www.google.com/search?q=" + content
+    driver.get(url)
+    pyautogui.click(x=700, y=310) 
 
 
