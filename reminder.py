@@ -3,6 +3,7 @@ import time
 import csv
 import calendar
 import tkinter as tk
+from tkinter import ttk
 from tkinter import messagebox
 
 temp = list()
@@ -33,11 +34,19 @@ def overWrite():
 def printAll(window, font):
 	update()
 	global temp
+	names = []
+	for row in temp:
+		names.append(row['name'])
 
 	reminder = tk.Label(window, text = '行事曆')
 	reminder.grid(row=1, column=0)
 	btn_add = tk.Button(window, text='新增', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: [clearFrame(window), addReminderPage(window, font)])
 	btn_add.grid(row=2, column=0)
+	combo = ttk.Combobox(window, values=names, state="readonly")
+	combo.grid(row = 3, column = 0, pady = 5) 
+	combo.current(0)
+	btn_del = tk.Button(window, text='刪除', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: deleteReminder(window, font, combo.get()))
+	btn_del.grid(row=3, column=1)
 	total_rows = len(temp) 
 	total_columns = 3
 	text = tk.Text(window, width=80, fg='blue', font=font, padx = 10, pady = 5)
@@ -53,6 +62,16 @@ def addReminder(window, font, name, description='', date=datetime.now().date()):
 	global temp
 	temp.append({'name':name, 'description':description, 'date':date})
 	overWrite()
+
+def deleteReminder(window, font, name):
+	update()
+	global temp
+	for row in temp:
+		if row['name'] == name:
+			for data in row:
+				temp.remove(row[data])
+	overWrite()
+	printAll(window, font)
 
 def currentTime():
 	return time.localtime(time.clock())
