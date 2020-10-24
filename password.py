@@ -52,12 +52,13 @@ def run(window, font):
 			acnt = str(acnt)
 			psw = passw.get()
 			psw = str(psw)
-			f = open("data.txt", "w", encoding="utf-8") #'a'
-			content = acnt + "\n" + psw
-			f.write(content)
+
+			with open("ahkData.ahk","r", encoding = "utf-8") as f:
+			    newline=[]
+			    for word in f.readlines():        
+			        newline.append(word.replace("####Data Starts####","\naccount = " + acnt + "\npassword = " + psw))
 			f.close()
 			os.system('ahkData.ahk')
-
 
 
 		btn = tk.Button(window, text='儲存', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = importData)

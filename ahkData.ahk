@@ -1,8 +1,4 @@
-﻿FileReadLine, account, 			C:\Users\User\Desktop\Ethan\Programming\資通訊\Computer-Assist-Software\data.txt, 1
-FileReadLine, password, 		C:\Users\User\Desktop\Ethan\Programming\資通訊\Computer-Assist-Software\data.txt, 2
-
-FileReadLine, fb, 				C:\Users\User\Desktop\Ethan\Programming\資通訊\Computer-Assist-Software\data.txt, 3
-FileReadLine, fbPassword, 		C:\Users\User\Desktop\Ethan\Programming\資通訊\Computer-Assist-Software\data.txt, 4
+﻿####Data Starts####
 
 
 ;按下Alt+g去gmail信箱
