@@ -81,19 +81,19 @@ def alert(name):
 	msg=''
 	for row in temp:
 		if name==row['name']:
-			for data in row:
-				msg.append(data)
-				msg+='\n'
+			msg.append(row)
 	tk.messagebox.showinfo("提醒事項", msg)
 
-
+'''
 def activateTime():
 	update()
 	global temp
 	while True:
 		for row in temp:
-			if datetime.now().date() == (row['year'], row['month'], row['date']):
-				alert()
+			if datetime.now().date() == (row['date']):
+				print('alert')
+				alert(row['name'])
+'''
 
 def addReminderPage(window, font):
 	title = tk.Label(window, text="新增備忘錄")
