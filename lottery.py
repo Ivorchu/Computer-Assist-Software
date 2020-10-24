@@ -185,7 +185,7 @@ def main(window, font):
         } 
         result["text"] = "".join(all_lottery[statement])
 
-    label = tk.Label(window, text = "請輸入彩卷種類")
+    label = tk.Label(window, text = "請輸入彩卷種類", bg = "#ABB2B9")
     label["font"] = font 
     label.grid(row = 1, column = 1, pady = (130,20), padx = 140)
     content = ttk.Combobox(window, values=["大樂透", "威力彩", "賓果賓果", "雙贏彩", "三星彩", "四星彩", "今彩539", "38樂台彩", "39樂台彩", "49樂台彩"], state="readonly") 
@@ -193,7 +193,7 @@ def main(window, font):
     btn_exe = tk.Button(window, text='搜尋', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: ask(content, result))
     btn_exe["font"] = font 
     btn_exe.grid(row = 3, column = 1,  pady = 10, padx = 160)
-    result = tk.Label(window, text = "")
+    result = tk.Label(window, text = "", bg = "#ABB2B9")
     result["font"] = font  
     result.grid(row = 4, column = 1, pady = 10)
 

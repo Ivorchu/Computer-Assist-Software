@@ -88,7 +88,7 @@ def addReminderPage(window, font):
 	month = tk.StringVar()
 	date = tk.StringVar()
 
-	eventName = tk.Entry(window, textvariable = name)
+	eventName = tk.Entry(window, textvariable = name, bg = "#ABB2B9")
 	eventName["font"] = font
 	eventName.insert(0, '名稱')
 	eventName.grid(row = 1, column = 1, pady = 10, padx = 160) 

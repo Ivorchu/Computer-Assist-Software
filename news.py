@@ -19,7 +19,7 @@ def refreshNews(window, font):
 
     total_rows = len(lst) 
     total_columns = len(lst[0])
-    text = tk.Text(window, width=80, bg = "#2C3E50", fg='white', font=font) 
+    text = tk.Text(window, width=80, bg = "#2C3E50", fg='white', font=font, padx = 10) 
     for i in range(total_rows): 
         for j in range(total_columns): 
             text.grid(row=3, column=0, padx = 0) 

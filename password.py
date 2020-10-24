@@ -6,7 +6,7 @@ import time
 import sys
 
 def run(window, font):
-	ask = tk.Label(window, text = "請選擇輸入Google或Facebook帳戶及密碼")
+	ask = tk.Label(window, text = "請選擇輸入Google或Facebook帳戶及密碼", bg = "#ABB2B9")
 	ask["font"] = font
 	ask.grid(row = 0, column = 0, pady = (80, 10)) 
 	combo = ttk.Combobox(window, values=['', 'Google', 'Facebook'], state="readonly")

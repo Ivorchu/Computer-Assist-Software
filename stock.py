@@ -14,7 +14,7 @@ def stocks(window, font):
 		driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe", options=options)
 		driver.get(url)
 	
-	label1 = tk.Label(window, text = "請輸入股票代碼 ")
+	label1 = tk.Label(window, text = "請輸入股票代碼 ", bg = "#ABB2B9")
 	label1["font"] = font
 	label1.grid(row = 1, column = 1, pady = (130, 20), padx = 140)
 	entry2 = tk.Entry(window)
