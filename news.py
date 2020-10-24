@@ -5,7 +5,6 @@ import requests
 import tkinter as tk
 from selenium import webdriver
 import time
-import pyautogui
 
 url = 'https://udn.com/news/breaknews/'
 
@@ -33,15 +32,15 @@ def refreshNews(window, font):
     btn_exe.grid(row = 2, column = 0, pady = 5, padx = (0, 170))
 
 
-def search(content):
-    options = webdriver.ChromeOptions()
-    options.add_argument("start-maximized")
-    options.add_argument("disable-infobars")
-    options.add_argument("--disable-extensions")
-    options.add_experimental_option("detach", True)
-    driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe", options=options)
-    url = "https://www.google.com/search?q=" + content
-    driver.get(url)
-    pyautogui.click(x=700, y=310) 
+    def search(content):
+        options = webdriver.ChromeOptions()
+        options.add_argument("start-maximized")
+        options.add_argument("disable-infobars")
+
+        options.add_argument("--disable-extensions")
+        options.add_experimental_option("detach", True)
+        driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe", options=options)
+        url = "https://www.google.com/search?q=" + entry.get() 
+        driver.get(url)
 
 
