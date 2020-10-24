@@ -56,9 +56,9 @@ def run(window, font):
 			f = open("ahkData.ahk", "r", encoding = 'utf-8')
 			lines = f.readlines()
 			lines[0] = "account = " + acnt 
-			lines[1] = "password = " + psw
+			lines[1] = "\npassword = " + psw
 
-			f = open("ahkData.ahk", "a", encoding = 'utf-8')
+			f = open("ahkData.ahk", "w", encoding = 'utf-8')
 			f.writelines(lines)
 
 			content = '''
