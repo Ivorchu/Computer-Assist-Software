@@ -39,7 +39,7 @@ def clearFrame(frame):
 def Home(window):
 	image = Image.open('profile_img.png')
 	image = image.resize((450, 320), Image.ANTIALIAS)
-	image = image.crop([0,0,450,300])
+	image = image.crop([0,0,450,300]) 
 	img = ImageTk.PhotoImage(image) 
 	panel = tk.Label(window, image = img, borderwidth = 0, highlightthickness = 0)
 	#panel.pack(side = "bottom", fill = "both", expand = "yes")
@@ -51,6 +51,7 @@ def Home(window):
 		options = webdriver.ChromeOptions()
 		options.add_argument("start-maximized")
 		options.add_argument("disable-infobars")
+
 		options.add_argument("--disable-extensions")
 		options.add_experimental_option("detach", True)
 		driver = webdriver.Chrome("C:\chromedriver_win32\chromedriver.exe", options=options)
