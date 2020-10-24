@@ -46,11 +46,11 @@ def printAll(window, font):
 	combo.grid(row = 3, column = 0, pady = 5) 
 	combo.current(0)
 	btn_del = tk.Button(window, text='刪除', width=5, height=1, bd=0, bg = "#D35400", fg = "white", command = lambda: deleteReminder(window, font, combo.get()))
-	btn_del.grid(row=3, column=1)
+	btn_del.grid(row=4, column=0)
 	total_rows = len(temp) 
 	total_columns = 3
 	text = tk.Text(window, width=80, fg='blue', font=font, padx = 10, pady = 5)
-	text.grid(row=3, column=0)
+	text.grid(row=5, column=0)
 	for row in temp: 
 		for data in row:
 			text.insert(tk.END, row[data])
@@ -68,8 +68,7 @@ def deleteReminder(window, font, name):
 	global temp
 	for row in temp:
 		if row['name'] == name:
-			for data in row:
-				temp.remove(row[data])
+			temp.remove(row)
 	overWrite()
 	printAll(window, font)
 
